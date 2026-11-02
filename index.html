@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>からあげテイクアウト専門店 鶏優 阿見店</title>
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+    <link rel="icon" href="images/rogo.jpeg" type="image/svg+xml">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+
+
+<body>
+
+    <header class="top-bar">
+
+    <div class="logo">
+        からあげテイクアウト専門店　鶏優　阿見店
+    </div>
+
+    <ul class="top-menu">
+        <li><a href="menu.html">メニュー</a></li>
+        <li><a href="kodawari.html">こだわり</a></li>
+        <li><a href="saisin.html">最新情報</a></li>
+        <li><a href="saiyou.html">採用情報</a></li>
+    </ul>
+
+</header>
+
+    <!--スライド-->
+<section class="slider">
+
+    <!-- 写真を動かす場所 -->
+    <div class="slide-track">
+
+        <!-- 唐揚げ写真 -->
+        <img src="images/kinoko.jpg">
+        <img src="images/ibento.jpg">
+        <img src="images/zouryou.jpg">
+
+        <!-- 無限スライド用コピー -->
+         <img src="images/kinoko.jpg">
+        <img src="images/ibento.jpg">
+        <img src="images/zouryou.jpg">
+
+    </div>
+
+</section>
+   
+     <!-- ローディング画面 -->
+    <div id="loading">
+        <p>Loading...</p>
+        <div id="loading-screen"></div>
+    </div>
+
+    <!-- ナビゲーションメニュー -->
+    <nav>
+        <button id="menu-open" class="btn-menu">
+            <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                <title>メニューを開く</title>
+                <path clip-rule="evenodd" d="m4.25 8c0-.41421.33579-.75.75-.75h14c.4142 0 .75.33579.75.75s-.3358.75-.75.75h-14c-.41421 0-.75-.33579-.75-.75zm0 4c0-.4142.33579-.75.75-.75h14c.4142 0 .75.3358.75.75s-.3358.75-.75.75h-14c-.41421 0-.75-.3358-.75-.75zm.75 3.25c-.41421 0-.75.3358-.75.75s.33579.75.75.75h14c.4142 0 .75-.3358.75-.75s-.3358-.75-.75-.75z" fill-rule="evenodd"/>
+            </svg>
+        </button>
+        <div id="menu-panel">
+            <button id="menu-close" class="btn-menu">
+                <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <title>メニューを閉じる</title>
+                    <path clip-rule="evenodd" d="m7.53033 6.46967c-.29289-.29289-.76777-.29289-1.06066 0s-.29289.76777 0 1.06066l4.46963 4.46967-4.46963 4.4697c-.29289.2929-.29289.7677 0 1.0606s.76777.2929 1.06066 0l4.46967-4.4696 4.4697 4.4696c.2929.2929.7677.2929 1.0606 0s.2929-.7677 0-1.0606l-4.4696-4.4697 4.4696-4.46967c.2929-.29289.2929-.76777 0-1.06066s-.7677-.29289-1.0606 0l-4.4697 4.46963z" fill-rule="evenodd"/>
+                </svg>
+            </button>
+ <ul class="menu-list">
+    <li><a href="menu.html">メニュー</a></li>
+    <li><a href="kodawari.html">こだわり</a></li>
+    <li><a href="saisin.html">最新情報</a></li>
+    <li><a href="saiyou.html">採用情報</a></li>
+
+    <!-- SNSアイコン横並び -->
+    <li class="sns-nav">
+        <a href="https://line.me/ti/p/あなたのLINEリンク">
+            <img src="images/LINE.png" alt="LINE">
+        </a>
+
+        <a href="https://www.instagram.com/あなたのアカウント名">
+            <img src="images/Instagram.png" alt="Instagram">
+        </a>
+    </li>
+</ul>
+
+        </div>
+    </nav>   
+
+    <!-- メニューの下に動画を一面で貼る -->
+<section class="menu-video-section">
+    <a href="menu.html">
+        <video src="images/karaage.douga1.mov" autoplay muted loop playsinline></video>
+    </a>
+</section>
+
+<section class="kodawari-cool-card">
+    <h2>こだわり</h2>
+    <p>
+        厳選素材で仕上げた、何度でも食べたくなる自慢のからあげ。
+    </p>
+    <a href="kodawari.html" class="btn">詳しくはこちらから！</a>
+</section>
+
+<section>
+<div class="delivery-container">
+
+    <div class="delivery-card">
+        <h2>出前館</h2>
+
+        <img src="images/demaecan.png" alt="">
+
+        <a href/○○○>
+            注文する
+        </a>
+    </div>
+
+    <div class="delivery-card">
+        <h2>Uber Eats</h2>
+
+        <img src="images/u-bar.png" alt="">
+
+        <a href/○○○>
+            注文する
+        </a>
+    </div>
+
+</div>
+</section>
+
+
+<section class="info-card">
+
+    <h2>大口注文・配達注文もOK!!</h2>
+
+    <p>
+        大口注文では、会社の集まりや集会など、様々なシチュエーションに対応して参ります。ご予約も、ご相談によっては前日での対応も可能ですのでお気軽にお問い合わせ下さいませ。
+    </p>
+
+    <p>
+        また、配達注文では、ご希望のご商品を、ご自宅やご職場までお届け！数や時間帯は、お問い合わせ下さいませ。お客様のご希望に添えるよう努めて参ります。
+    </p>
+
+    <a href="tel:0298963838" class="order-phone">
+     029-896-3838
+    </a>
+    
+    </a>
+    </section>
+
+    <section class="faq-section">
+
+    <h2 class="faq-title">よくあるご質問</h2>
+
+    <div class="faq-item">
+        <div class="question">
+            Q. からあげは1個から購入できますか？
+        </div>
+
+        <div class="answer">
+            A. はい。単品からでもご注文いただけます。
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question">
+            Q. オードブルは予約が必要ですか？
+        </div>
+
+        <div class="answer">
+            A. 当日のご注文も可能ですが、事前予約がおすすめです。
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question">
+            Q. お弁当のからあげは変更できますか？
+        </div>
+
+        <div class="answer">
+            A. 可能です。ご注文時にお申し付けください。
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question">
+            Q. 配達はできますか？
+        </div>
+
+        <div class="answer">
+            A. 配達エリアや数量によって対応可能です。お気軽にご相談ください。
+        </div>
+    </div>
+
+</section>
+   
+    <!--店舗詳細-->
+    <section id="shop" class="shop">
+        <div class="shop-content wrapper">
+            <h2 class="title fadein">店舗情報</h2>
+            <img src="images/tenpo.avif" alt="">
+            <h3 class="title fadein">鶏優 阿見店</h3>
+            <p class="fadein">
+                営業時間：11:00〜20:00<br> 
+                電話番号：<a href="tel:0298963838">029-896-3838</a><br>
+                住所：茨城県稲敷郡阿見町阿見2997-1<br>
+                営業日：定休日なし（不定期店休の場合がございます）<br>
+                お支払い方法：現金・クレジットカード・PayPay<br>
+                            D払い・auPay・楽天Pay・その他対応可<br>
+            </p>
+        </div>
+        
+    </section>
+
+</body>
+</html>  
+
+
+

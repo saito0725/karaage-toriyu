@@ -1,0 +1,79 @@
+/*最新情報*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*最新情報の枠*/
+.store-info, .new-items, .events {
+    background: #ffffff;
+    margin: 40px auto;
+    padding: 35px;
+    width: 100%;
+    max-width: 1000px;
+   
+    border:15px solid #3d220f;
+    border-radius: 15px;
+    box-shadow:
+        0 0 0 6px #b8860b,
+        0 0 0 13px #6b3f1d,
+        0 15px 30px rgba(0,0,0,.5);
+ 
+}
+ 
+ 
+
+ 
+.item, .event {
+    margin-bottom: 20px;
+}
+ 
+.date {
+    font-size: 0.9em;
+    color: #eb1515;
+}
+ 
+h2 {
+    font-family: 'Potta One', cursive;
+    font-size: 34px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #3d220f;
+}
+.store-info,
+.new-items,
+.events,
+.item,
+.event {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 22px;
+    line-height: 1.8;
+    color: #ff7f00;
+    font-weight: 700;
+ 
+    text-shadow:
+        0.5px 0 #000000,
+        -0.5px 0 #000000,
+        0 0.5px #000000,
+        0 -0.5px #000000;
+}
+ 
+.price {
+    font-family: 'Kosugi Maru', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #6b3f1d;
+}
+h2 {
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #ef1f18;
+ 
+    text-shadow:
+        1px 0 #6b3f1d,
+        -1px 0 #6b3f1d,
+        0 1px #6b3f1d,
+        0 -1px #6b3f1d;
+}

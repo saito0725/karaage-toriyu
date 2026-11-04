@@ -11,7 +11,7 @@
     --oswald-font: 'Oswald', sans-serif;
 }
 
-/*からあげ背景*/
+/*からあげの背景*/
 body {
     color: var(--brown);
 
@@ -186,33 +186,6 @@ SLIDE MENU
 /* =====================================
 コンセプト、メニュー、こだわりのところ
 ===================================== */
-.menu-cool-card {
-    width: 1200px;
-    max-width: 90%;
-    margin: 60px auto;
-    padding: 30px;
-
-    background: #fff8e6; /* ← こだわりカードと同じ薄い金ベージュ */
-    border-radius: 25px;
-
-    /* ← こだわりカードと完全同じ枠構造 */
-    border: 10px solid #6b3f1d; /* 唐揚げの衣色の濃い茶色 */
-    box-shadow:
-        0 0 0 6px #b8860b,      /* 内側の金色ライン */
-        0 0 0 12px #6b3f1d,     /* 外側の茶色ライン */
-        0 20px 40px rgba(0,0,0,.4); /* 立体影 */
-
-    font-family: 'M PLUS Rounded 1c', sans-serif;
-    text-align: center;
-}
-
-.menu-title,
-#menu h2,
-.menu-cool-card h2 {
-    font-family: 'Shippori Mincho', serif;
-    color: #d6671d;   /* ← こだわりと同じ色！ */
-    font-size: 4rem;
-}
 
 /*からあげの動画*/
 .menu-video-section video {
@@ -838,251 +811,68 @@ body{
     color:#d6671d;
 }
 
-/*最新情報*/
-/*最新情報の枠*/
-.store-info, .new-items, .events {
-    background:  #fff8e6;
-    margin: 40px auto;
-    padding: 35px;
-    width: 100%;
-    max-width: 1000px;
-   
-    border:15px solid #3d220f;
-    border-radius: 15px;
-    box-shadow:
-        0 0 0 6px #b8860b,
-        0 0 0 13px #6b3f1d,
-        0 15px 30px rgba(0,0,0,.5);
- 
-}
- 
- 
- 
-h2 {
-    padding-left: 10px;
-    margin-bottom: 15px;
-}
- 
-.item, .event {
-    margin-bottom: 20px;
-}
- 
-.date {
-    font-size: 0.9em;
-    color: #eb1515;
-}
- 
-h2 {
-    font-family: 'Potta One', cursive;
-    font-size: 34px;
-    font-weight: 400;
-    letter-spacing: 1px;
-    color: #3d220f;
-}
-.store-info,
-.new-items,
-.events,
-.item,
-.event {
-    font-family: "Yuji Syuku", serif;
-    font-size: 24px;
-    line-height: 2;
-    color: #ff7f00;
+/* =========================
+   共通
+========================= */
 
-    -webkit-text-stroke: 0.5px #6b3f1d;
-
-    text-shadow:
-        1px 1px 0 #6b3f1d,
-        2px 2px 4px rgba(0,0,0,.2);
-}
- 
-.price {
-    font-family: 'Kosugi Maru', sans-serif;
-    font-size: 22px;
-    font-weight: 700;
-    color: #6b3f1d;
+html{
+    overflow-x: hidden;
 }
 
-h2 {
-    font-family:
-        "Yuji Syuku",
-        "HGP行書体",
-        "HG行書体",
-        "游明朝",
-        serif;
-    font-size: 63px;
-    color: #f71c14;
-
-    text-shadow:
-        2px 2px 0 #ffffff,
-        4px 4px 8px rgba(247, 239, 239, 0.3);
+body{
+    overflow-x: hidden;
 }
 
-/*こだわり*/
-.top-menu {
-    transform: translateX(-150px); /* ← 左に15px動かす */
-}
- 
-.wrapper {
-    max-width: 1200px;
-    margin: 80px auto;
-    padding: 70px;
-
-    border: 15px solid #7b4a1e;
-    background: #fff;
-    border-radius: 30px;
-    box-shadow:
-        inset 0 0 0 5px #fff,
-        0 10px 30px rgba(0,0,0,0.25);
-
-    box-sizing: border-box;
-}
-
-.concept-flex{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 60px;
-}
-
-.concept-text,
-.concept-photo{
-    flex: 1;
-}
- 
-.concept-flex{
-    display: flex;
-    align-items: center;
-    gap: 50px;
-}
-
-.concept-photo{
-    flex: 1;
-}
-
-.concept-text{
-    flex: 1;
-}
-
-.concept-photo img{
-    width: 100%;
-    max-width: 500px;
+img{
+    max-width: 100%;
     height: auto;
     display: block;
-    margin: 0 auto;
-
-    border: 6px solid #b8860b;
-    border-radius: 20px;
-    padding: 2px;
-    background: #fff;
-    box-shadow:
-        inset 0 0 0 3px #fff,
-        0 8px 20px rgba(0,0,0,0.25);
-}
- 
-/*本文*/
-p {
-    font-family: "M PLUS Rounded 1c", sans-serif;
-    font-size: 24px;
-    font-weight: 700;
 }
 
-.wrapper {
-    max-width: 1200px;
-    margin: auto;
-
-    border: 35px solid #6b3f1d;
-    background-color: #fff8e6;
-    border-radius: 30px;
-    box-shadow:
-        inset 0 0 0 5px #fff8e6,
-        0 10px 30px rgba(0,0,0,0.25);
-
-    padding: 70px;
+video{
+    max-width: 100%;
+    height: auto;
 }
 
-.material-card {
-    width: 100%;
-    max-width: 2000px;
-    margin: -30px auto 0; /* 上を30px引き上げる */
-    padding: 20px 70px;
-    box-sizing: border-box;
-}
- 
-h1 {
-    font-family:
-        "Yuji Syuku",
-        "HGP行書体",
-        "HG行書体",
-        "游明朝",
-        serif;
+@media screen and (max-width:1024px){
 
-    color: #c40000;
-    font-size: 56px;
-    font-weight: 700;
-    text-align: center;
-
-    text-shadow:
-        2px 2px 4px rgba(0,0,0,0.2);
-}
-
-/* =========================
-   中津醤油 フェードスライダー
-========================= */
-.fade-slider{
-    position: relative;
-    width: 500px;
-    height: 400px;
-    overflow: hidden;
-
-    border: 6px solid #b8860b;
-    border-radius: 20px;
-    background: #fff;
-
-    box-shadow:
-        inset 0 0 0 3px #fff,
-        0 8px 20px rgba(0,0,0,.25);
-}
-
-.fade-slider .fade-img{
-    position: absolute;
-    inset: 0;
-
-    width: 100%;
-    height: 100%;
-
-    /* 画像を中央配置 */
-    object-fit: contain;
-    object-position: center center;
-
-    opacity: 0;
-    background: #fff;
-}
-
-/* 1枚目 */
-.fade1{
-    animation: fade1 8s infinite;
-}
-
-/* 2枚目 */
-.fade2{
-    animation: fade2 8s infinite;
-}
-
-@keyframes fade1{
-    0%,45%{
-        opacity:1;
+    .top-bar{
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
     }
-    55%,100%{
-        opacity:0;
+
+    .top-menu{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .logo{
+        text-align: center;
     }
 }
 
-@keyframes fade2{
-    0%,45%{
-        opacity:0;
+@media screen and (max-width:768px){
+
+    .top-bar{
+        padding: 15px;
+        flex-direction: column;
     }
-    55%,100%{
-        opacity:1;
+
+    .logo{
+        font-size: 1.8rem;
+        text-align: center;
+        line-height: 1.4;
+    }
+
+    .top-menu{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .top-menu li{
+        width: 100%;
+        text-align: center;
     }
 }

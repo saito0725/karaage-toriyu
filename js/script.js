@@ -146,3 +146,4 @@ const fadeElements = document.querySelectorAll('.fadein');
 fadeElements.forEach((fadeElement) => {
   fadeObserver.observe(fadeElement);
 });
+

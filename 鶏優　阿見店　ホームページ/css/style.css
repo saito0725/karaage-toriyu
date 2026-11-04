@@ -1,0 +1,878 @@
+@charset 'UTF-8';
+
+/*全体の色 */
+:root {
+    --brown: #6b3f1d;
+    --light-green: #ffffff;
+    --green: #ffffff;
+    --primary-blue: #d6671d;
+    --light-grey: #eee;
+    --white: #fff;
+    --oswald-font: 'Oswald', sans-serif;
+}
+
+/*からあげの背景*/
+body {
+    color: var(--brown);
+
+    background-image: url('../images/haikei.jpg');
+    background-repeat: repeat;
+
+    /* サイズ調整 */
+    background-size: 2000px;
+
+    text-align: center;
+
+    animation: bgMove 30s linear infinite;
+}
+
+@keyframes bgMove {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 500px 0;
+    }
+}
+
+/*全体の文字*/
+p {
+    line-height: 1.7;
+}
+img {
+    max-width: 100%;
+}
+.title {
+    font-family: var(--oswald-font);
+    font-size: min(10vw, 2rem);
+    margin-bottom: 2rem;
+}
+.btn {
+    color: var(--white);
+    background: var(--brown);
+    border: 1px solid var(--brown);
+    text-decoration: none;
+    padding: 1rem;
+    display: inline-block;
+    margin: 2rem 0;
+    transition: .4s;
+}
+.fadein{
+    opacity: 0;
+}
+
+/*
+LAYOUT
+================================================ */
+.wrapper {
+    max-width: 38rem;
+    margin: auto;
+    padding: 0 1rem;
+}
+
+
+
+/*
+ロード関係
+================================================ */
+#loading {
+    background-color: var(--light-grey);
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    display: grid;
+    place-items: center;
+}
+#loading-screen {
+    background-color: var(--light-green);
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+    translate: 0 100vh;
+}
+#loading p {
+    font-size: 2rem;
+    font-family: var(--oswald-font);
+}
+
+/*
+SLIDE MENU
+================================================ */
+/* 開閉ボタン */
+.btn-menu {
+    position: fixed;
+    right: 1rem;
+    top: 1rem;
+    z-index: 4;
+    padding: .5rem 1rem;
+    border: 1px solid var(--brown);
+    border-radius: 50%;
+    height: 4rem;
+    width: 4rem;
+    transition: .4s;
+}
+.btn-menu svg {
+    fill: var(--brown);
+    margin-top: .25rem;
+    height: 2rem;
+    width: 2rem;
+}
+
+/* 閉じるボタン */
+#menu-close {
+    border: 1px solid var(--light-green);
+}
+#menu-close svg {
+    fill: var(--light-green);
+}
+
+/* スライドメニューパネル */
+#menu-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 4;
+    padding: 8rem 2rem 2rem;
+    width: max(32vw, 20rem);
+    height: 100dvh; /* スマホ対応 */
+    background-color: var(--primary-blue);
+    box-shadow: 0 0 2rem var(--primary-blue);
+    font-family: var(--oswald-font);
+    translate: 100vw;
+}
+
+.menu-list {
+    list-style: none;
+}
+.menu-list li {
+    margin: 1.5rem 0;
+    opacity: 0;
+}
+.menu-list a {
+    color: var(--light-green);
+    text-decoration: none;
+    font-size: 2rem;
+}
+
+
+
+.sns-nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.sns-nav img {
+    width: 80px;
+    border-radius: 20px;
+    display: block;
+
+    box-shadow:
+        0 0 0 6px #b8860b,
+        0 0 0 12px #6b3f1d,
+        0 10px 25px rgba(0,0,0,.3);
+
+    transition: .3s;
+}
+
+.sns-nav img:hover {
+    transform: scale(1.08);
+    filter: brightness(1.1);
+}
+
+
+/* =====================================
+コンセプト、メニュー、こだわりのところ
+===================================== */
+
+/*からあげの動画*/
+.menu-video-section video {
+    width: 80vw;          
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    margin-top: 80px;
+
+    border: 12px solid #6b3f1d;   /* ← 茶色の太枠（写真と同じ色） */
+    padding: 6px;                 /* ← 額縁の内側の余白 */
+    background: #fff;             /* ← 額の中の白背景 */
+    border-radius: 10px;          /* ← 角丸で柔らかく */
+    box-shadow: 0 10px 30px rgba(0,0,0,.35); /* ← 高級感の影 */
+}
+
+
+/* こだわりの枠カード */
+.kodawari-cool-card {
+    width: 1200px;        /* ← 横にしっかり広げる */
+    max-width: 90%;       /* ← スマホで崩れないように保険 */
+    margin: 60px auto;
+    padding: 50px;        /* ← 横長にした分、余白も増やす */
+
+    background: #fff8e6;
+    border-radius: 25px;
+
+    border: 10px solid #6b3f1d;
+    box-shadow:
+        0 0 0 6px #b8860b,
+        0 0 0 12px #6b3f1d,
+        0 20px 40px rgba(0,0,0,.4);
+
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    text-align: center;
+}
+
+
+/* タイトルを和風でかっこよく */
+.kodawari-cool-card h2 {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 3.2rem;
+    color: #d6671d; /* 唐揚げの赤茶色 */
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* 文章 */
+.kodawari-cool-card p {
+    font-size: 1.4rem;
+    line-height: 2.2;
+    margin-bottom: 30px;
+}
+
+/* ボタン中央寄せ */
+.kodawari-cool-card .btn {
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+
+/* 文章 */
+.concept p{
+    font-size: 1.3rem;
+    text-align: left;
+    line-height: 2;
+    margin-bottom: 40px;
+}
+
+/* ボタン */
+.concept .btn{
+    align-self: center;
+}
+
+/*
+GALLERY
+================================================ */
+.gallery {
+    display: flex;
+    flex-direction: column-reverse;
+}
+.gallery-image {
+    width: min(100%, calc(38rem - 2rem));
+    margin: auto;
+    position: relative;
+}
+.gallery-image::after {
+    display: block;
+    content: '';
+    width: calc(100% - 2rem);
+    height: calc(100% - 2.5rem);
+    z-index: 3;
+    border: 3px solid var(--white);
+    top: 1rem;
+    left: 1rem;
+    position: absolute;
+}
+.gallery-image img {
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    width: 100%;
+}
+.gallery-thumbnails {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(5, 1fr);
+    list-style: none;
+    margin: 1rem 0;
+}
+.gallery-thumbnails img {
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+/*出前館、ウーバー*/
+.delivery-container{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+
+    margin:80px auto;
+}
+
+.delivery-card{
+    width:700px;
+
+    background:#fff8e6;
+
+    padding:40px;
+
+    border-radius:25px;
+
+    border:10px solid #6b3f1d;
+
+    box-shadow:
+        0 0 0 6px #b8860b,
+        0 0 0 12px #6b3f1d,
+        0 20px 40px rgba(0,0,0,.4);
+
+    text-align:center;
+}
+
+.delivery-card img{
+    width:250px;
+    display:block;
+    margin:20px auto;
+}
+
+
+
+/*大口注文、配達注文*/
+.info-card{
+    width:1200px;
+    max-width:90%;
+
+    margin:60px auto;
+    padding:50px;
+
+    background:#fff8e6;
+    border-radius:25px;
+
+    border:10px solid #6b3f1d;
+
+    box-shadow:
+        0 0 0 6px #b8860b,
+        0 0 0 12px #6b3f1d,
+        0 20px 40px rgba(0,0,0,.4);
+
+    text-align:center;
+}
+
+.info-card h2{
+    font-family:'Shippori Mincho', serif;
+    font-size:3.2rem;
+    color:#d6671d;
+
+    margin-bottom:30px;
+}
+
+.info-card p{
+    font-size:1.4rem;
+    line-height:2.2;
+
+    max-width:900px;
+    margin:20px auto;
+
+    text-align:left;
+}
+
+.info-card .btn{
+    margin-top:30px;
+}
+
+.order-phone{
+    font-size:3rem;
+    font-weight:bold;
+
+    color:#fff;
+    background:#d6671d;
+
+    display:inline-block;
+
+    padding:15px 30px;
+
+    border-radius:15px;
+
+    margin:30px 0;
+}
+
+.faq-section{
+    width:90%;
+    max-width:1400px;
+    margin:100px auto;
+}
+
+.faq-title{
+    display:inline-block;
+
+    background:#2f6b43;
+    color:#fff;
+
+    padding:20px 50px;
+    margin-bottom:50px;
+
+    font-size:3rem;
+    border-radius:5px;
+}
+
+.faq-item{
+    margin-bottom:60px;
+}
+
+.question{
+    background:#fff;
+
+    width:70%;
+
+    padding:25px 40px;
+
+    border-radius:999px;
+
+    font-size:2rem;
+    font-weight:bold;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.answer{
+    background:#f2a500;
+    color:#000;
+
+    width:70%;
+
+    padding:25px 40px;
+
+    border-radius:999px;
+
+    font-size:2rem;
+    font-weight:bold;
+
+    margin-top:15px;
+    margin-left:auto;
+}
+
+/* 店舗情報の部分
+================================================ */
+.shop {
+    background: url('../images/siro.jpeg') no-repeat center top / cover;
+    margin-top: 16rem;
+    position: relative;   /* ← これに変える！ */
+    height: 60rem;
+    width: 100%;
+}
+
+
+/* 店舗情報の白いカード部分（横に広げる） */
+.shop-content {
+    background: var(--white);
+    padding: 5rem;
+    position: absolute;
+
+    top: -16rem;     /* ← ここで好きな位置に調整できるようになる */
+    width: 50%;      /* ← カードの横幅 */
+    left: 50%;       /* ← 画面の中央に移動 */
+    transform: translateX(-50%); /* ← 中央に固定 */
+
+    max-width: none;
+    text-align: center;
+}
+
+
+/* タイトル（店舗情報・から揚げ鶏優 阿見店）も同じフォントにする */
+.shop-content .title {
+    font-family: 'Shippori Mincho', sans-serif;
+    font-size: 3rem;     /* ← 樹の好みで調整OK */
+    color: #d6671d;      /* ← 右のカードと同じ赤茶色に統一 */
+    margin-bottom: 2rem;
+}
+
+/* 店舗情報の本文を大きくする */
+.shop-content p {
+    font-size: 1.4rem;   /* ← 今より少し大きく（おすすめ） */
+    line-height: 2.2;    /* ← 読みやすくする */
+}
+
+
+
+/* 店舗情報の写真を大きくする */
+.shop-content img {
+    width: 77%;           /* ← 写真の横幅を大きくする（好きに調整OK） */
+    max-width: 1200px;    /* ← PCで巨大になりすぎないように上限設定 */
+    height: auto;
+    border-radius: 15px;  /* ← 角丸（好みで変更OK） */
+    box-shadow: 0 10px 30px rgba(0,0,0,.3); /* ← 高級感の影 */
+}
+
+
+/* 店舗情報の見出し */
+.shop h3 {
+    margin: 1rem 0;
+    padding-top: 2rem;
+    font-weight: normal;
+    border-top: 1px solid var(--light-grey);
+}
+
+/* FAQ 全体の枠 */
+.faq-section {
+    width: 1200px;
+    max-width: 90%;
+    margin: 80px auto;
+    padding: 50px;
+
+    background: #fff8e6;
+    border-radius: 25px;
+
+    border: 10px solid #6b3f1d;
+    box-shadow:
+        0 0 0 6px #b8860b,
+        0 0 0 12px #6b3f1d,
+        0 20px 40px rgba(0,0,0,.4);
+
+    text-align: center;
+}
+
+
+
+
+/* タイトル（よくあるご質問） */
+.faq-title {
+    display: inline-block;
+    background: #2f6b43;      /* 深い緑で和風 */
+    color: #fff;
+    padding: 20px 50px;
+    margin-bottom: 50px;
+    font-size: 3rem;
+    border-radius: 5px;
+    font-family: 'Shippori Mincho', serif; /* ← 樹の和風フォント */
+}
+
+/* Q&A 1セット */
+.faq-item {
+    margin-bottom: 60px;
+}
+
+/* 質問（Q.） */
+.question {
+    background: #fff8e6;      /* 和風の薄い金ベージュ */
+    width: 70%;
+    padding: 25px 40px;
+    border-radius: 999px;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #6b3f1d;           /* 唐揚げの茶色 */
+    box-shadow:
+        0 0 0 6px #b8860b,    /* 内側の金色ライン */
+        0 0 0 12px #6b3f1d,   /* 外側の茶色ライン */
+        0 10px 25px rgba(0,0,0,.25);
+}
+
+/* 回答（A.） */
+.answer {
+    background: #f2a500;      /* こだわりのオレンジ系 */
+    color: #000;
+    width: 70%;
+    padding: 25px 40px;
+    border-radius: 999px;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-left: auto;
+    box-shadow:
+        0 5px 15px rgba(0,0,0,.2);
+}
+
+
+/*
+DESKTOP SIZE
+================================================ */
+@media(min-width: 800px){
+/* COMMON */
+    .title {
+        margin-bottom: 3rem;
+    }
+    .btn:hover {
+        color: var(--brown);
+        background: var(--light-green);
+    }
+
+/* SLIDE MENU */
+    .btn-menu:hover {
+        background-color: var(--light-green);
+    }
+    #menu-close:hover svg {
+        fill: var(--brown);
+    }
+    .menu-list a:hover {
+        transition: .4s;
+        color: var(--green);
+    }
+
+.btn-menu {
+    background-color: #ffffff;   /* ← 背景色を白にする */
+    border: 2px solid #6b3f1d;   /* ← 唐揚げカラーの枠 */
+}
+
+.btn-menu svg {
+    fill: #6b3f1d;               /* ← アイコンの色も茶色で統一 */
+}
+
+#menu-close svg {
+    fill: #6b3f1d;   /* ← 茶色でくっきり見える */
+}
+
+
+/* CONCEPT*/
+    .concept {
+        display: flex;
+        align-items: center;   /* ← 画像とカードの縦位置を中央揃え */
+        justify-content: center;
+        gap: 40px;             /* ← 間隔も整える */
+        margin: 16rem 0;
+    }
+
+    .concept img {
+        width: 600px;          /* ← メニュー枠と同じ幅 */
+        max-height: 400px;     /* ← メニュー枠と同じ高さに揃える */
+        object-fit: cover;
+
+        margin: 0 auto;        /* ← 上書きして中央寄せにする */
+    }
+/* GALLERY */
+    .gallery {
+        flex-direction: row;
+    }
+    .gallery-image {
+        width: 50vw;
+        margin: 0;
+    }
+    .gallery-image img {
+        height: 100vh;
+    }
+    .gallery-content {
+        width: 30vw;
+    }
+    .gallery-thumbnails {
+        gap: 2vw;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .gallery-thumbnails img:hover {
+        box-shadow: 0 0 1rem rgba(0,0,0,.4);
+        transition: .4s;
+    }
+
+/* SHOP */
+    .shop {
+        margin-top: 20rem;
+        height: 50rem;
+    }
+}
+
+
+/* 上の白い帯 */
+
+.top-bar{
+    position:static;
+    top:0;
+    left:0;
+
+    width:100%;
+    height:70px;
+
+    background:#eeeeee;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 8%;
+
+    z-index:1000;
+}
+
+/* ロゴ */
+.logo {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: #ff0000;
+}
+
+
+/* メニュー */
+
+.top-menu{
+    display:flex;
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+
+.top-menu li{
+    padding:0 25px;
+    border-left:1px solid #e60012;
+}
+
+.top-menu li:last-child{
+    border-right:1px solid #e60012;
+}
+
+.top-menu a{
+    text-decoration:none;
+    color:#e60012;
+    font-weight:bold;
+    font-size:16px;
+}
+
+.top-menu a:hover{
+    opacity:.7;
+}
+
+/* スライダー */
+
+.slider{
+    border:15px solid #3d220f;
+
+    box-shadow:
+        0 0 0 5px #b8860b,
+        0 0 0 10px #6b3f1d,
+        0 15px 40px rgba(0,0,0,.5);
+
+    overflow:hidden;
+}
+
+.slide-track{
+    display:flex;
+    width:max-content;
+    animation:slide 40s linear infinite;
+}
+
+.slide-track img{
+    height:650px;
+    width:auto;
+    object-fit:contain;
+}
+
+/* スライドアニメーション */
+
+@keyframes slide{
+    from{
+        transform:translateX(0);
+    }
+
+    to{
+        transform:translateX(-50%);
+    }
+}
+
+/* 横行っちゃうのをの消したやつ!! */
+html,
+body{
+    overflow-x: hidden;
+}
+
+/* メニュー */
+.menu-card{
+    width: 800px;
+    margin: 50px auto;
+
+    background: #fff;
+    padding: 30px;
+
+    border-radius: 30px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,.2);
+}
+
+.menu-card img{
+    width: 100%;
+    max-width: 500px;
+
+    display: block;
+    margin: 0 auto 20px;
+
+    border-radius: 15px;
+}
+
+.menu-card h2{
+    text-align:center;
+    font-size:3rem;
+    color:#d6671d;
+}
+
+.menu-card p{
+    margin-top:20px;
+}
+
+.price{
+    text-align:right;
+    font-size:5rem;
+    font-weight:bold;
+    color:#d6671d;
+}
+
+/* =========================
+   共通
+========================= */
+
+html{
+    overflow-x: hidden;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+video{
+    max-width: 100%;
+    height: auto;
+}
+
+@media screen and (max-width:1024px){
+
+    .top-bar{
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .top-menu{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .logo{
+        text-align: center;
+    }
+}
+
+@media screen and (max-width:768px){
+
+    .top-bar{
+        padding: 15px;
+        flex-direction: column;
+    }
+
+    .logo{
+        font-size: 1.8rem;
+        text-align: center;
+        line-height: 1.4;
+    }
+
+    .top-menu{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .top-menu li{
+        width: 100%;
+        text-align: center;
+    }
+}

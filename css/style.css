@@ -891,79 +891,46 @@ video{
     height: auto;
 }
 
-@media screen and (max-width:1024px){
-
-    .top-bar{
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-
-    .top-menu{
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .logo{
-        text-align: center;
-    }
-}
-
-@media screen and (max-width:768px){
-
-    .top-bar{
-        padding: 15px;
-        flex-direction: column;
-    }
-
-    .logo{
-        font-size: 1.8rem;
-        text-align: center;
-        line-height: 1.4;
-    }
-
-    .top-menu{
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .top-menu li{
-        width: 100%;
-        text-align: center;
-    }
-}
 /* =========================
    スマホ最適化
 ========================= */
 
 @media screen and (max-width:768px){
 
+    /* 上のメニューは隠す */
+    .top-menu{
+        display:none;
+    }
+
     /* ヘッダー */
     .top-bar{
         height:auto;
         padding:15px;
+        justify-content:center;
     }
 
     .logo{
-        font-size:1.4rem;
+        font-size:1.5rem;
         line-height:1.4;
+        padding-right:70px;
     }
 
     /* スライダー */
     .slide-track img{
-        height:250px;
+        height:220px;
     }
 
     /* 動画 */
     .menu-video-section video{
         width:95%;
+        margin-top:30px;
     }
 
     /* こだわり */
     .kodawari-cool-card{
         width:95%;
         padding:25px;
+        margin:30px auto;
     }
 
     .kodawari-cool-card h2{
@@ -972,54 +939,65 @@ video{
 
     .kodawari-cool-card p{
         font-size:1rem;
+        line-height:1.8;
     }
 
     /* 出前館・Uber */
     .delivery-container{
         flex-direction:column;
         align-items:center;
+        gap:20px;
     }
 
     .delivery-card{
         width:95%;
-        padding:25px;
+        padding:20px;
     }
 
     .delivery-card h2{
-        font-size:2.2rem;
+        font-size:2rem;
     }
 
     .delivery-card img{
-        width:180px;
+        width:140px;
     }
 
     .order-btn{
         width:100%;
-        max-width:250px;
+        max-width:220px;
+        font-size:1rem;
     }
 
     /* 大口注文 */
     .info-card{
         width:95%;
-        padding:25px;
+        padding:20px;
+        margin:30px auto;
     }
 
     .info-card h2{
         font-size:2rem;
+        line-height:1.4;
     }
 
     .info-card p{
         font-size:1rem;
+        line-height:1.8;
+        text-align:left;
+        margin:15px 0;
     }
 
     .order-phone{
-        font-size:1.6rem;
+        font-size:1.7rem;
+        width:100%;
+        max-width:300px;
+        padding:15px;
     }
 
     /* FAQ */
     .faq-section{
         width:95%;
-        padding:20px;
+        padding:15px;
     }
 
     .faq-title{
@@ -1029,28 +1007,25 @@ video{
     .question,
     .answer{
         width:100%;
+        padding:15px;
         font-size:1rem;
+        line-height:1.6;
         border-radius:20px;
-        padding:20px;
     }
 
     /* 店舗情報 */
     .shop{
         height:auto;
-        margin-top:60px;
+        margin-top:40px;
         padding-bottom:50px;
     }
 
     .shop-content{
         position:static;
-
         width:95%;
-
         transform:none;
-
         margin:0 auto;
-
-        padding:25px;
+        padding:20px;
     }
 
     .shop-content .title{
@@ -1059,5 +1034,10 @@ video{
 
     .shop-content p{
         font-size:1rem;
+        line-height:1.8;
+    }
+
+    .shop-content img{
+        width:100%;
     }
 }

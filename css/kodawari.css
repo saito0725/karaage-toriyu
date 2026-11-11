@@ -113,12 +113,10 @@
     opacity:0;
 }
 
-/* 1枚目 */
 .fade1{
     animation:fade1 8s infinite;
 }
 
-/* 2枚目 */
 .fade2{
     animation:fade2 8s infinite;
 }
@@ -146,6 +144,7 @@
 /* =========================
    スマホ対応
 ========================= */
+
 @media screen and (max-width:768px){
 
     .top-menu{
@@ -160,20 +159,26 @@
     }
 
     .wrapper h1{
-        font-size:30px;
-        margin-bottom:20px;
-        line-height:1.3;
+        font-size:22px;
+        margin-bottom:15px;
+        line-height:1.4;
     }
 
-    /* 写真→文章の縦並び */
+    /* 写真 → 文字 */
     .concept-flex{
         display:flex;
         flex-direction:column;
-        gap:20px;
+        gap:15px;
     }
 
-    .concept-photo,
+    .concept-photo{
+        order:1;
+        width:100%;
+        flex:none;
+    }
+
     .concept-text{
+        order:2;
         width:100%;
         flex:none;
     }
@@ -181,20 +186,20 @@
     .concept-text p{
         font-size:14px;
         line-height:1.8;
-        font-weight:700;
     }
 
     .fade-slider,
     .concept-photo img{
         width:100%;
         max-width:100%;
-        height:250px;
+        height:260px;
     }
 }
 
 /* =========================
    極小スマホ
 ========================= */
+
 @media screen and (max-width:480px){
 
     .wrapper{
@@ -202,7 +207,8 @@
     }
 
     .wrapper h1{
-        font-size:24px;
+        font-size:20px;
+        line-height:1.4;
     }
 
     .concept-text p{
@@ -212,6 +218,6 @@
 
     .fade-slider,
     .concept-photo img{
-        height:200px;
+        height:220px;
     }
 }

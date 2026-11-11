@@ -279,26 +279,146 @@ html{
 .menu-category-nav a:hover{
     background:#b84d10;
 }
-/* =========================
-スマホ対応
-========================= */
 
-@media(max-width:768px){
+@media screen and (max-width:768px){
 
-    .menu-grid{
-        grid-template-columns:1fr;
-    }
-
+    /* タイトル */
     .menu-title{
-        font-size:2.5rem;
+        display:block;
+        width:95%;
+        margin:50px auto 30px;
+        padding:15px 20px;
+        font-size:1.8rem;
+        line-height:1.4;
+        text-align:center;
     }
 
+    /* グリッド */
+    .menu-grid{
+
+        grid-template-columns:
+        repeat(2,1fr);
+
+        gap:10px;
+
+        width:96%;
+    }
+
+    /* カード */
     .menu-item{
-        padding:15px;
+        padding:10px;
+        border-width:7px;
     }
 
+    /* 画像 */
     .menu-item img{
-        height:220px;
+        height:120px;
+        padding:5px;
+        margin-bottom:10px;
     }
 
+    /* 商品名 */
+    .menu-item h3{
+        font-size:0.95rem;
+        margin-bottom:8px;
+    }
+
+    /* 説明 */
+    .short-desc{
+        font-size:0.75rem;
+        line-height:1.4;
+        margin-bottom:5px;
+    }
+
+    /* 商品タイプ */
+    .type{
+        font-size:0.65rem;
+        margin-bottom:8px;
+    }
+
+    /* もっと見る */
+    .more-btn{
+        font-size:0.7rem;
+        padding:5px 8px;
+        margin-bottom:10px;
+    }
+
+    /* 詳細 */
+    .long-desc{
+        font-size:0.75rem;
+        padding:10px;
+    }
+
+    /* 価格 */
+    .price{
+        font-size:1.1rem;
+        margin-top:5px;
+    }
+
+    /* 上に戻る */
+    .back-top{
+        width:70px;
+        height:70px;
+    }
+
+    .back-top::before{
+        font-size:1.4rem;
+    }
+
+    .back-top span{
+        font-size:0.7rem;
+    }
+
+    /* カテゴリボタン */
+    .menu-category-nav{
+        top:0;
+        gap:6px;
+        padding:10px;
+    }
+
+    .menu-category-nav a{
+        font-size:0.75rem;
+        padding:6px 10px;
+    }
+}
+
+/* スマホだけトップページに戻るを表示 */
+
+.top-menu{
+    display:flex !important;
+    justify-content:center;
+    margin-top:10px;
+}
+
+.top-menu li{
+    border:none !important;
+    padding:0;
+}
+
+.top-menu li:last-child{
+    border:none !important;
+}
+
+.top-menu a{
+    background:#d6671d;
+    color:#fff !important;
+
+    text-decoration:none;
+
+    padding:8px 15px;
+
+    border-radius:999px;
+
+    font-size:0.8rem;
+    font-weight:bold;
+}
+
+.top-bar{
+    height:auto;
+    padding:15px;
+
+    display:flex;
+    flex-direction:column;
+
+    gap:10px;
 }

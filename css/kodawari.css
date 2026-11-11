@@ -241,9 +241,11 @@
     }
 
     .top-menu li{
-        border:none;
-        padding:0;
-    }
+    border:none !important;
+    border-right:none !important;
+    border-left:none !important;
+    padding:0;
+}
 
     .top-menu a{
         background:#d6671d;
@@ -261,3 +263,4 @@
         font-weight:bold;
     }
 }
+

@@ -3,30 +3,24 @@
 ========================= */
 
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
-
 
 /* ヘッダー位置調整 */
 .top-menu{
-    transform: translateX(-150px);
+    transform:translateX(-150px);
 }
 
 /* 外枠 */
 .wrapper{
-    max-width: 1200px;
-    margin: 80px auto;
-    padding: 70px;
-
-    background: #fff8e6;
-
-    border: 35px solid #6b3f1d;
-    border-radius: 30px;
-
-    box-sizing: border-box;
-
+    max-width:1200px;
+    margin:80px auto;
+    padding:70px;
+    background:#fff8e6;
+    border:35px solid #6b3f1d;
+    border-radius:30px;
     box-shadow:
         inset 0 0 0 5px #fff8e6,
         0 10px 30px rgba(0,0,0,.25);
@@ -34,23 +28,23 @@
 
 /* レイアウト */
 .concept-flex{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 60px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:60px;
 }
 
 /* 左右均等 */
 .concept-photo,
 .concept-text{
-    flex: 1;
+    flex:1;
 }
 
 /* 写真エリア */
 .concept-photo{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
 /* タイトル */
@@ -61,50 +55,35 @@
         "HG行書体",
         "游明朝",
         serif;
-
-    color: #c40000;
-
-    font-size: 56px;
-    font-weight: 700;
-
-    text-align: center;
-
-    margin-bottom: 40px;
-
-    text-shadow:
-        2px 2px 4px rgba(0,0,0,.2);
+    color:#c40000;
+    font-size:56px;
+    font-weight:700;
+    text-align:center;
+    margin-bottom:40px;
+    text-shadow:2px 2px 4px rgba(0,0,0,.2);
 }
 
 /* 本文 */
 .concept-text p{
-    font-family: "M PLUS Rounded 1c", sans-serif;
-
-    font-size: 24px;
-    font-weight: 700;
-
-    line-height: 2.2;
-
-    color: #333;
+    font-family:"M PLUS Rounded 1c",sans-serif;
+    font-size:24px;
+    font-weight:700;
+    line-height:2.2;
+    color:#333;
 }
 
 /* 通常画像 */
 .concept-photo img{
-    width: 100%;
-    max-width: 500px;
-    height: 320px;
-
-    display: block;
-
-    object-fit: cover;
-    object-position: center;
-
-    background: #fff;
-
-    border: 6px solid #b8860b;
-    border-radius: 20px;
-
-    box-shadow:
-        0 8px 20px rgba(0,0,0,.25);
+    width:100%;
+    max-width:500px;
+    height:320px;
+    display:block;
+    object-fit:cover;
+    object-position:center;
+    background:#fff;
+    border:6px solid #b8860b;
+    border-radius:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,.25);
 }
 
 /* =========================
@@ -112,78 +91,66 @@
 ========================= */
 
 .fade-slider{
-    position: relative;
-
-    width: 500px;
-    height: 320px;
-
-    overflow: hidden;
-
-    background: #fff;
-
-    border: 6px solid #b8860b;
-    border-radius: 20px;
-
-    box-sizing: border-box;
-
-    box-shadow:
-        0 8px 20px rgba(0,0,0,.25);
+    position:relative;
+    width:100%;
+    max-width:500px;
+    height:320px;
+    overflow:hidden;
+    background:#fff;
+    border:6px solid #b8860b;
+    border-radius:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,.25);
 }
 
 .fade-slider .fade-img{
-    position: absolute;
-    inset: 0;
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-    object-position: center;
-
-    opacity: 0;
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+    opacity:0;
 }
 
-/* 1枚目 */
 .fade1{
-    animation: fade1 8s infinite;
+    animation:fade1 8s infinite;
 }
 
-/* 2枚目 */
 .fade2{
-    animation: fade2 8s infinite;
+    animation:fade2 8s infinite;
 }
 
 @keyframes fade1{
     0%,45%{
-        opacity: 1;
+        opacity:1;
     }
 
     55%,100%{
-        opacity: 0;
+        opacity:0;
     }
 }
 
 @keyframes fade2{
     0%,45%{
-        opacity: 0;
+        opacity:0;
     }
 
     55%,100%{
-        opacity: 1;
+        opacity:1;
     }
 }
 
 /* =========================
    スマホ対応
 ========================= */
+
 @media screen and (max-width:768px){
 
-    /* ヘッダー */
     .top-menu{
         transform:none;
     }
 
-    /* 外枠 */
     .wrapper{
         margin:20px 10px;
         padding:20px;
@@ -191,50 +158,48 @@
         border-radius:20px;
     }
 
-    /* タイトル */
     .wrapper h1{
-        font-size:30px;
-        margin-bottom:20px;
-        line-height:1.3;
+        font-size:22px;
+        margin-bottom:15px;
+        line-height:1.4;
     }
 
-    /* 横並び維持 */
+    /* 写真 → 文字 */
     .concept-flex{
         display:flex;
-        flex-direction:row;
-        align-items:flex-start;
+        flex-direction:column;
         gap:15px;
     }
 
-    /* 文字側 */
-    .concept-text{
-        flex:0 0 50%;
-    }
-
-    /* 画像側 */
     .concept-photo{
-        flex:0 0 50%;
+        order:1;
+        width:100%;
+        flex:none;
     }
 
-    /* 本文 */
+    .concept-text{
+        order:2;
+        width:100%;
+        flex:none;
+    }
+
     .concept-text p{
         font-size:14px;
         line-height:1.8;
-        font-weight:700;
     }
 
-    /* 画像 */
-    .concept-photo img,
-    .fade-slider{
+    .fade-slider,
+    .concept-photo img{
         width:100%;
-        height:auto;
         max-width:100%;
+        height:260px;
     }
 }
 
 /* =========================
    極小スマホ
 ========================= */
+
 @media screen and (max-width:480px){
 
     .wrapper{
@@ -242,19 +207,17 @@
     }
 
     .wrapper h1{
-        font-size:24px;
-    }
-
-    .concept-text{
-        flex:0 0 55%;
-    }
-
-    .concept-photo{
-        flex:0 0 45%;
+        font-size:20px;
+        line-height:1.4;
     }
 
     .concept-text p{
         font-size:12px;
         line-height:1.7;
+    }
+
+    .fade-slider,
+    .concept-photo img{
+        height:220px;
     }
 }

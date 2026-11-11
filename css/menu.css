@@ -7,6 +7,71 @@
     box-sizing: border-box;
 }
 
+.limited-feature{
+
+    width:95%;
+    max-width:1200px;
+
+    margin:40px auto 100px;
+
+    background:#fff8e6;
+
+    border:12px solid #6b3f1d;
+
+    border-radius:30px;
+
+    padding:30px;
+
+    text-align:center;
+
+    box-shadow:
+        0 0 0 8px #b8860b,
+        0 15px 30px rgba(0,0,0,.3);
+}
+
+.limited-feature img{
+
+    width:100%;
+    max-width:700px;
+
+    display:block;
+
+    margin:0 auto 30px;
+
+    border-radius:20px;
+}
+
+.limited-feature h3{
+    font-family:'Shippori Mincho', serif;
+
+    color:#d6671d;
+
+    font-size:3.5rem;
+
+    font-weight:bold;
+
+    text-align:center;
+}
+
+.limited-feature .price{
+
+    font-size:3rem;
+
+    color:#ff5500;
+}
+
+.limited-desc{
+    font-size:1.8rem;
+    font-weight:bold;
+    color:#5a3820;
+
+    line-height:1.8;
+
+    margin:25px auto;
+
+    max-width:900px;
+}
+
 .menu-title{
 
     display:table;
@@ -422,3 +487,4 @@ html{
 
     gap:10px;
 }
+

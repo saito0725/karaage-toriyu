@@ -347,6 +347,46 @@ html{
 
 @media screen and (max-width:768px){
 
+    /* 期間限定商品 */
+
+.limited-feature{
+    width:95%;
+    padding:15px;
+    margin:20px auto 50px;
+
+    border-width:7px;
+}
+
+.limited-feature img{
+    width:100%;
+    max-width:100%;
+
+    margin:0 auto 15px;
+}
+
+.limited-feature h3{
+    font-size:1.8rem;
+    line-height:1.4;
+
+    margin:15px 0;
+
+    min-height:auto; /* ←重要 */
+}
+
+.limited-desc{
+    font-size:1rem;
+
+    line-height:1.8;
+
+    margin:15px auto;
+}
+
+.limited-feature .price{
+    font-size:1.5rem;
+
+    line-height:1.5;
+}
+
     /* タイトル */
     .menu-title{
         display:block;

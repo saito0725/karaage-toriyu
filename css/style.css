@@ -891,6 +891,156 @@ video{
     height: auto;
 }
 
+
+/* 右下固定おみくじ */
+
+.omikuji-floating {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    z-index: 9999;
+}
+
+.omikuji-floating-btn {
+    background: #89694e;
+    color: #fff;
+    border: 2px solid #b99a55;
+    border-radius: 30px;
+    padding: 15px 23px;
+    font-size: 14px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.omikuji-floating-btn:hover {
+    background: #b18b54;
+    transform: translateY(-3px);
+}
+
+/* おみくじのポップアップ */
+
+.omikuji-popup {
+    display: none;
+    position: absolute;
+    right: 0;
+    bottom: 65px;
+    width: 310px;
+    background: #fffaf0;
+    border: 2px solid #b99a55;
+    border-radius: 16px;
+    padding: 30px 20px 20px;
+    text-align: center;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+}
+
+.omikuji-popup.active {
+    display: block;
+    animation: popupShow 0.3s ease;
+}
+
+.omikuji-close {
+    position: absolute;
+    right: 12px;
+    top: 8px;
+    font-size: 25px;
+    color: #79563d;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.omikuji-popup h2 {
+    color: #79563d;
+    font-family: 'Shippori Mincho', serif;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.omikuji-subtitle {
+    color: #ad8950;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 2px;
+    font-size: 12px;
+}
+
+.omikuji-description {
+    font-size: 13px;
+    color: #806b58;
+}
+
+.omikuji-decoration {
+    color: #c5a45e;
+    margin: 15px 0;
+}
+
+.omikuji-result {
+    min-height: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #79563d;
+}
+
+.omikuji-result .result-name {
+    font-size: 35px;
+    color: #b18442;
+    font-family: 'Shippori Mincho', serif;
+    font-weight: bold;
+}
+
+.omikuji-result .result-message {
+    font-size: 13px;
+    color: #806b58;
+}
+
+.omikuji-button {
+    background: #89694e;
+    color: white;
+    border: 1px solid #b99a55;
+    border-radius: 30px;
+    padding: 12px 25px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.omikuji-button:disabled {
+    background: #b5a797;
+    cursor: not-allowed;
+}
+
+.omikuji-note {
+    color: #a28e7a;
+    font-size: 11px;
+    margin-top: 12px;
+}
+
+@keyframes popupShow {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* スマホ対応 */
+
+@media (max-width: 600px) {
+    .omikuji-floating {
+        right: 12px;
+        bottom: 15px;
+    }
+
+    .omikuji-popup {
+        width: min(310px, calc(100vw - 24px));
+    }
+}
+
+
 /* =========================
    レスポンシブデザイン
 ========================= */

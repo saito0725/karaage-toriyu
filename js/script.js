@@ -147,3 +147,151 @@ fadeElements.forEach((fadeElement) => {
   fadeObserver.observe(fadeElement);
 });
 
+
+/* =========================
+   からあげおみくじ
+========================= */
+
+const openOmikuji = document.getElementById("omikuji-open");
+const closeOmikuji = document.getElementById("omikuji-close");
+const popupOmikuji = document.getElementById("omikuji-popup");
+const omikujiButton = document.getElementById("omikuji-button");
+const omikujiResult = document.getElementById("omikuji-result");
+
+// 運勢と確率
+const fortunes = [
+    {
+        name: "大吉",
+        probability: 5,
+        message: "最高の運勢！揚げたてのからあげで幸せな一日！"
+    },
+    {
+        name: "中吉",
+        probability: 15,
+        message: "いいことがありそう！今日は絶好調！"
+    },
+    {
+        name: "小吉",
+        probability: 30,
+        message: "小さな幸せが見つかる一日になりそう！"
+    },
+    {
+        name: "吉",
+        probability: 40,
+        message: "いつも通りが一番！おいしいご飯で元気いっぱい！"
+    },
+    {
+        name: "凶",
+        probability: 10,
+        message: "そんな日もある！からあげを食べて運気回復！"
+    }
+];
+
+// 日本時間の日付
+function getToday() {
+    return new Intl.DateTimeFormat("ja-JP", {
+        timeZone: "Asia/Tokyo",
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit"
+    }).format(new Date());
+}
+
+// 抽選
+function drawOmikuji() {
+    let random = Math.random() * 100;
+
+    for (const fortune of fortunes) {
+        random -= fortune.probability;
+
+        if (random < 0) {
+            return fortune;
+        }
+    }
+
+    return fortunes[fortunes.length - 1];
+}
+
+// 結果表示
+function showOmikujiResult(fortune) {
+
+    omikujiResult.innerHTML = `
+        <p class="result-name">${fortune.name}</p>
+        <p class="result-message">${fortune.message}</p>
+    `;
+
+    omikujiResult.classList.remove("show");
+    void omikujiResult.offsetWidth;
+    omikujiResult.classList.add("show");
+}
+
+// 今日の結果を確認
+function checkOmikuji() {
+
+    const saved = localStorage.getItem("toriyuOmikuji");
+    const today = getToday();
+
+    if (saved) {
+        const data = JSON.parse(saved);
+
+        if (data.date === today) {
+            showOmikujiResult(fortunes[data.index]);
+
+            omikujiButton.textContent = "本日は終了しました";
+            omikujiButton.disabled = true;
+
+            return;
+        }
+    }
+
+    omikujiResult.textContent = "今日の運勢は……？";
+    omikujiButton.textContent = "おみくじを引く";
+    omikujiButton.disabled = false;
+}
+
+// 開く
+if (openOmikuji && popupOmikuji) {
+    openOmikuji.addEventListener("click", () => {
+        popupOmikuji.classList.add("active");
+        checkOmikuji();
+    });
+}
+
+// 閉じる
+if (closeOmikuji && popupOmikuji) {
+    closeOmikuji.addEventListener("click", () => {
+        popupOmikuji.classList.remove("active");
+    });
+}
+
+// おみくじを引く
+if (omikujiButton && omikujiResult) {
+
+    checkOmikuji();
+
+    omikujiButton.addEventListener("click", () => {
+
+        if (omikujiButton.disabled) return;
+
+        const saved = localStorage.getItem("toriyuOmikuji");
+
+        if (saved && JSON.parse(saved).date === getToday()) {
+            checkOmikuji();
+            return;
+        }
+
+        const fortune = drawOmikuji();
+        const index = fortunes.indexOf(fortune);
+
+        // 結果を保存
+        localStorage.setItem("toriyuOmikuji", JSON.stringify({
+            date: getToday(),
+            index: index
+        }));
+
+        showOmikujiResult(fortune);
+
+        omikujiButton.textContent = "本日は終了しました";
+        omikujiButton.disabled = true;
+    });
+}

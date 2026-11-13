@@ -1,5 +1,7 @@
 @charset 'UTF-8';
 
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap');
+
 /*全体の色 */
 :root {
     --brown: #6b3f1d;
@@ -663,12 +665,11 @@ DESKTOP SIZE
 
 /* ロゴ */
 .logo {
-    font-family: 'Shippori Mincho', serif;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
     font-size: 32px;
-    font-weight: 700;
+    font-weight: 800;
     color: #ff0000;
 }
-
 
 /* メニュー */
 

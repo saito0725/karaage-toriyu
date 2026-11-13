@@ -528,3 +528,95 @@ html{
     gap:10px;
 }
 
+
+/* =========================
+   公式サイト風・デザイン調整
+========================= */
+
+/* 商品一覧 */
+.menu-grid {
+    max-width: 1250px;
+    gap: 25px;
+}
+
+/* 商品カード */
+.menu-item {
+    border: 5px solid #70451f;
+    border-radius: 18px;
+    box-shadow:
+        0 0 0 3px #c49a43,
+        0 8px 18px rgba(0,0,0,.18);
+    transition: transform .3s, box-shadow .3s;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+    box-shadow:
+        0 0 0 3px #c49a43,
+        0 12px 25px rgba(0,0,0,.25);
+}
+
+/* 商品画像 */
+.menu-item img {
+    border-radius: 10px;
+    background: #fff;
+}
+
+/* 商品名 */
+.menu-item h3 {
+    letter-spacing: .04em;
+}
+
+/* 価格 */
+.menu-item .price {
+    letter-spacing: .02em;
+}
+
+/* カテゴリメニュー */
+.menu-category-nav {
+    box-shadow: 0 3px 10px rgba(0,0,0,.12);
+}
+
+.menu-category-nav a {
+    transition: .25s;
+}
+
+.menu-category-nav a:hover {
+    transform: translateY(-2px);
+}
+
+/* 期間限定商品 */
+.limited-feature {
+    border-width: 8px;
+    border-radius: 22px;
+    box-shadow:
+        0 0 0 5px #b8860b,
+        0 12px 25px rgba(0,0,0,.2);
+}
+
+.limited-feature img {
+    border-radius: 12px;
+}
+
+/* スマホ */
+@media screen and (max-width: 768px) {
+
+    .menu-grid {
+        gap: 12px;
+        width: 94%;
+    }
+
+    .menu-item {
+        border-width: 5px;
+        padding: 9px;
+        border-radius: 15px;
+    }
+
+    .menu-item img {
+        border-radius: 8px;
+    }
+
+    .menu-category-nav {
+        box-shadow: 0 2px 8px rgba(0,0,0,.15);
+    }
+}

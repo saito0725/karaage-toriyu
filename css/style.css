@@ -897,6 +897,8 @@ video{
 
 @media screen and (max-width:768px){
 
+    
+
     /* ヘッダー */
     .top-menu{
         display:none;
@@ -1035,4 +1037,25 @@ video{
         width:100%;
         max-width:100%;
     }
+}
+
+.btn-menu {
+    position: fixed;
+    right: 1rem;
+    top: 1rem;
+
+    z-index: 4;
+
+    padding: .5rem 1rem;
+
+    border: 2px solid #6b3f1d;
+
+    border-radius: 50%;
+
+    height: 4rem;
+    width: 4rem;
+
+    background-color: #ffffff; /* 追加 */
+
+    transition: .4s;
 }

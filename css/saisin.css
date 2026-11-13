@@ -30,35 +30,84 @@
     margin-bottom: 20px;
 }
  
-.date {
-    font-size: 0.9em;
-    color: #eb1515;
+/* =========================
+   開催期間
+========================= */
+
+.date{
+    font-family:'M PLUS Rounded 1c', sans-serif;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    color:#c40000;
+
+    margin:15px 0;
+
+    text-shadow:none;
 }
+
  
-h2 {
-    font-family: 'Potta One', cursive;
-    font-size: 34px;
-    font-weight: 400;
-    letter-spacing: 1px;
-    color: #3d220f;
-}
-.store-info,
-.new-items,
-.events,
-.item,
-.event {
+
+
+
+/* =========================
+   本文
+========================= */
+
+.item p,
+.event p{
     font-family: 'M PLUS Rounded 1c', sans-serif;
+
     font-size: 22px;
-    line-height: 1.8;
-    color: #ff7f00;
+
+    line-height: 2;
+
+    color: #333;
+
     font-weight: 700;
- 
-    text-shadow:
-        0.5px 0 #000000,
-        -0.5px 0 #000000,
-        0 0.5px #000000,
-        0 -0.5px #000000;
+
+    text-shadow: none;
+
+    margin: 10px 0;
 }
+
+
+/* =========================
+   商品名・イベント名
+========================= */
+
+.item h3,
+.event h3{
+    font-family: 'Shippori Mincho', serif;
+
+    font-size: 40px;
+
+    color: #8b4513;
+
+    margin: 20px 0;
+
+    text-shadow: none;
+}
+
+/* =========================
+   価格
+========================= */
+
+.price{
+    font-family:'Shippori Mincho', serif;
+
+    font-size:30px;
+
+    font-weight:bold;
+
+    color:#d6671d;
+
+    text-shadow:none;
+}
+
+
  
 .price {
     font-family: 'Kosugi Maru', sans-serif;

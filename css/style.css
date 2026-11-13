@@ -96,92 +96,6 @@ LAYOUT
     font-family: var(--oswald-font);
 }
 
-/*
-SLIDE MENU
-================================================ */
-/* 開閉ボタン */
-.btn-menu {
-    position: fixed;
-    right: 1rem;
-    top: 1rem;
-    z-index: 4;
-    padding: .5rem 1rem;
-    border: 1px solid var(--brown);
-    border-radius: 50%;
-    height: 4rem;
-    width: 4rem;
-    transition: .4s;
-}
-.btn-menu svg {
-    fill: var(--brown);
-    margin-top: .25rem;
-    height: 2rem;
-    width: 2rem;
-}
-
-/* 閉じるボタン */
-#menu-close {
-    border: 1px solid var(--light-green);
-}
-#menu-close svg {
-    fill: var(--light-green);
-}
-
-/* スライドメニューパネル */
-#menu-panel {
-    position: fixed;
-    top: 0;
-    right: 0;
-    z-index: 4;
-    padding: 8rem 2rem 2rem;
-    width: max(32vw, 20rem);
-    height: 100dvh; /* スマホ対応 */
-    background-color: var(--primary-blue);
-    box-shadow: 0 0 2rem var(--primary-blue);
-    font-family: var(--oswald-font);
-    translate: 100vw;
-}
-
-.menu-list {
-    list-style: none;
-}
-.menu-list li {
-    margin: 1.5rem 0;
-    opacity: 0;
-}
-.menu-list a {
-    color: var(--light-green);
-    text-decoration: none;
-    font-size: 2rem;
-}
-
-
-
-.sns-nav {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
-}
-
-.sns-nav img {
-    width: 80px;
-    border-radius: 20px;
-    display: block;
-
-    box-shadow:
-        0 0 0 6px #b8860b,
-        0 0 0 12px #6b3f1d,
-        0 10px 25px rgba(0,0,0,.3);
-
-    transition: .3s;
-}
-
-.sns-nav img:hover {
-    transform: scale(1.08);
-    filter: brightness(1.1);
-}
-
 
 /* =====================================
 コンセプト、メニュー、こだわりのところ
@@ -1208,4 +1122,240 @@ video{
     background-color: #ffffff; /* 追加 */
 
     transition: .4s;
+}
+
+/* ナビゲーション全体 */
+.main-navigation {
+    position: relative;
+    z-index: 1000;
+}
+
+/* メニューボタン */
+.btn-menu {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    width: 65px;
+    height: 65px;
+    border: 2px solid #6b3f1d;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+    z-index: 1002;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn-menu span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background: #6b3f1d;
+    transition: 0.3s;
+}
+
+.btn-menu:hover span {
+    width: 30px;
+}
+
+/* 背景 */
+#menu-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s, visibility 0.4s;
+    z-index: 1000;
+}
+#menu-backdrop.is-open {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* メニューパネル */
+#menu-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 380px;
+    max-width: 88vw;
+    height: 100vh;
+    height: 100dvh;
+    padding: 70px 35px 30px;
+    box-sizing: border-box;
+
+    background: #fffaf1;
+    border-left: 4px solid #6b3f1d;
+
+    overflow-y: auto;
+    z-index: 1001;
+
+    transform: translateX(100%);
+    transition: transform 0.5s ease;
+    visibility: hidden;
+}
+
+#menu-panel.is-open {
+    transform: translateX(0);
+    visibility: visible;
+}
+
+/* 閉じるボタン */
+.menu-close {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    border: none;
+    background: transparent;
+    color: #6b3f1d;
+    font-size: 38px;
+    cursor: pointer;
+}
+
+/* メニューヘッダー */
+.menu-header {
+    text-align: center;
+    color: #6b3f1d;
+    margin-bottom: 25px;
+}
+
+.menu-header p {
+    font-family: sans-serif;
+    font-size: 12px;
+    letter-spacing: 4px;
+    margin-bottom: 8px;
+}
+
+.menu-header h2 {
+    font-size: 28px;
+    margin: 0 0 8px;
+}
+
+.menu-header span {
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+/* 区切り線 */
+.menu-divider {
+    width: 100%;
+    height: 1px;
+    background: #d8c5a9;
+    margin: 22px 0;
+}
+
+/* メニューリスト */
+.menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-list li {
+    margin-bottom: 10px;
+}
+
+.menu-list a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 12px;
+    color: #6b3f1d;
+    text-decoration: none;
+    background: #fff;
+    border: 1px solid #eadbc6;
+    transition: 0.3s;
+}
+
+.menu-list a:hover {
+    background: #6b3f1d;
+    color: #fff;
+    transform: translateX(5px);
+}
+
+.menu-number {
+    font-size: 13px;
+    font-weight: bold;
+    opacity: 0.7;
+}
+
+.menu-text {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 4px;
+}
+
+.menu-text strong {
+    font-size: 16px;
+}
+
+.menu-text small {
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.menu-arrow {
+    font-size: 25px;
+}
+
+/* SNS・お問い合わせ */
+.menu-contact {
+    text-align: center;
+    color: #6b3f1d;
+}
+
+.menu-contact > p:first-child {
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+.sns-nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 15px 0 25px;
+}
+
+.sns-nav img {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+}
+
+.menu-phone {
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.menu-phone a {
+    color: #6b3f1d;
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* スマートフォン */
+@media screen and (max-width: 600px) {
+    .btn-menu {
+        top: 15px;
+        right: 15px;
+        width: 55px;
+        height: 55px;
+    }
+
+    #menu-panel {
+        width: 340px;
+        max-width: 90vw;
+        padding: 65px 25px 25px;
+    }
+
+    .menu-header h2 {
+        font-size: 24px;
+    }
 }

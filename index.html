@@ -63,41 +63,71 @@
         <div id="loading-screen"></div>
     </div>
 
-    <!-- ナビゲーションメニュー -->
-    <nav>
-        <button id="menu-open" class="btn-menu">
-            <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                <title>メニューを開く</title>
-                <path clip-rule="evenodd" d="m4.25 8c0-.41421.33579-.75.75-.75h14c.4142 0 .75.33579.75.75s-.3358.75-.75.75h-14c-.41421 0-.75-.33579-.75-.75zm0 4c0-.4142.33579-.75.75-.75h14c.4142 0 .75.3358.75.75s-.3358.75-.75.75h-14c-.41421 0-.75-.3358-.75-.75zm.75 3.25c-.41421 0-.75.3358-.75.75s.33579.75.75.75h14c.4142 0 .75-.3358.75-.75s-.3358-.75-.75-.75z" fill-rule="evenodd"/>
-            </svg>
-        </button>
-        <div id="menu-panel">
-            <button id="menu-close" class="btn-menu">
-                <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                    <title>メニューを閉じる</title>
-                    <path clip-rule="evenodd" d="m7.53033 6.46967c-.29289-.29289-.76777-.29289-1.06066 0s-.29289.76777 0 1.06066l4.46963 4.46967-4.46963 4.4697c-.29289.2929-.29289.7677 0 1.0606s.76777.2929 1.06066 0l4.46967-4.4696 4.4697 4.4696c.2929.2929.7677.2929 1.0606 0s.2929-.7677 0-1.0606l-4.4696-4.4697 4.4696-4.46967c.2929-.29289.2929-.76777 0-1.06066s-.7677-.29289-1.0606 0l-4.4697 4.46963z" fill-rule="evenodd"/>
-                </svg>
-            </button>
- <ul class="menu-list">
-    <li><a href="menu.html">メニュー</a></li>
-    <li><a href="kodawari.html">こだわり</a></li>
-    <li><a href="saisin.html">最新情報</a></li>
-    <li><a href="saiyou.html">採用情報</a></li>
+  <nav class="main-navigation">
+    <button id="menu-open" class="btn-menu"
+        aria-label="メニューを開く"
+        aria-expanded="false"
+        aria-controls="menu-panel">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
 
-    <!-- SNSアイコン横並び -->
-    <li class="sns-nav">
-        <a href="https://line.me/ti/p/あなたのLINEリンク">
-            <img src="images/LINE.png" alt="LINE">
-        </a>
+    <div id="menu-backdrop"></div>
 
-        <a href="https://www.instagram.com/あなたのアカウント名">
-            <img src="images/Instagram.png" alt="Instagram">
-        </a>
-    </li>
-</ul>
+    <div id="menu-panel" aria-hidden="true">
+        <button id="menu-close" class="menu-close" aria-label="メニューを閉じる">×</button>
+
+        <div class="menu-header">
+            <p>からあげテイクアウト店</p>
+            <h2>鶏優 阿見店</h2>
+        </div>
+
+        <div class="menu-divider"></div>
+
+        <ul class="menu-list">
+            <li>
+                <a href="menu.html">
+                    <span class="menu-text"><strong>メニュー</strong><small>MENU</small></span>
+                    <span class="menu-arrow">›</span>
+                </a>
+            </li>
+            <li>
+                <a href="kodawari.html">
+                    <span class="menu-text"><strong>こだわり</strong><small>OUR COMMITMENT</small></span>
+                    <span class="menu-arrow">›</span>
+                </a>
+            </li>
+            <li>
+                <a href="saisin.html">
+                    <span class="menu-text"><strong>最新情報</strong><small>NEWS</small></span>
+                    <span class="menu-arrow">›</span>
+                </a>
+            </li>
+            <li>
+                <a href="saiyou.html">
+                    <span class="menu-text"><strong>採用情報</strong><small>RECRUIT</small></span>
+                    <span class="menu-arrow">›</span>
+                </a>
+            </li>
+        </ul>
+
+        <div class="menu-divider"></div>
+
+        <div class="menu-contact">
+            <p>FOLLOW US</p>
+            <div class="sns-nav">
+                <a href="https://line.me/ti/p/あなたのLINEリンク">
+                    <img src="images/LINE.png" alt="LINE">
+                </a>
+                <a href="https://www.instagram.com/あなたのアカウント名">
+                    <img src="images/Instagram.png" alt="Instagram">
+                </a>
+            </div>
 
         </div>
-    </nav>   
+    </div>
+</nav>
 
     <!-- メニューの下に動画を一面で貼る -->
 <section class="menu-video-section">
@@ -232,7 +262,7 @@
 <div class="omikuji-floating">
 
     <button id="omikuji-open" class="omikuji-floating-btn">
-        ✦ おみくじを引く
+        🐔 おみくじを引く  🐔
     </button>
 
     <div id="omikuji-popup" class="omikuji-popup">
@@ -243,7 +273,7 @@
 
         <p class="omikuji-subtitle">TODAY'S FORTUNE</p>
 
-        <h2>からあげおみくじ</h2>
+        <h2>鶏優おみくじ</h2>
 
         <p class="omikuji-description">
             今日の運勢を占ってみませんか？
@@ -260,7 +290,7 @@
         </button>
 
         <p class="omikuji-note">
-            ※ 1日1回限定
+            ※ 1日1回限定<br>こちらの画面をお見せください。
         </p>
 
     </div>

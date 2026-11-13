@@ -30,84 +30,35 @@
     margin-bottom: 20px;
 }
  
-/* =========================
-   開催期間
-========================= */
-
-.date{
-    font-family:'M PLUS Rounded 1c', sans-serif;
-
-    font-size:20px;
-
-    font-weight:bold;
-
-    color:#c40000;
-
-    margin:15px 0;
-
-    text-shadow:none;
+.date {
+    font-size: 0.9em;
+    color: #eb1515;
 }
-
  
-
-
-
-/* =========================
-   本文
-========================= */
-
-.item p,
-.event p{
+h2 {
+    font-family: 'Potta One', cursive;
+    font-size: 34px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #3d220f;
+}
+.store-info,
+.new-items,
+.events,
+.item,
+.event {
     font-family: 'M PLUS Rounded 1c', sans-serif;
-
     font-size: 22px;
-
-    line-height: 2;
-
-    color: #333;
-
+    line-height: 1.8;
+    color: #ff7f00;
     font-weight: 700;
-
-    text-shadow: none;
-
-    margin: 10px 0;
+ 
+    text-shadow:
+        0.5px 0 #000000,
+        -0.5px 0 #000000,
+        0 0.5px #000000,
+        0 -0.5px #000000;
 }
-
-
-/* =========================
-   商品名・イベント名
-========================= */
-
-.item h3,
-.event h3{
-    font-family: 'Shippori Mincho', serif;
-
-    font-size: 40px;
-
-    color: #8b4513;
-
-    margin: 20px 0;
-
-    text-shadow: none;
-}
-
-/* =========================
-   価格
-========================= */
-
-.price{
-    font-family:'Shippori Mincho', serif;
-
-    font-size:30px;
-
-    font-weight:bold;
-
-    color:#d6671d;
-
-    text-shadow:none;
-}
-
-
  
 .price {
     font-family: 'Kosugi Maru', sans-serif;
@@ -125,4 +76,99 @@ h2 {
         -1px 0 #6b3f1d,
         0 1px #6b3f1d,
         0 -1px #6b3f1d;
+}
+
+/* =========================
+   スマホ対応（レスポンシブ）
+========================= */
+
+@media screen and (max-width: 768px) {
+
+    /* 最新情報の枠 */
+    .store-info,
+    .new-items,
+    .events {
+        width: 92%;
+        max-width: 100%;
+        margin: 25px auto;
+        padding: 20px 15px;
+
+        border: 8px solid #3d220f;
+        border-radius: 12px;
+
+        box-shadow:
+            0 0 0 4px #b8860b,
+            0 0 0 8px #6b3f1d,
+            0 10px 20px rgba(0,0,0,.4);
+    }
+
+    /* 見出し */
+    h2 {
+        font-size: 26px;
+        letter-spacing: 1px;
+    }
+
+    /* 文章 */
+    .store-info,
+    .new-items,
+    .events,
+    .item,
+    .event {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    /* 日付 */
+    .date {
+        font-size: 13px;
+    }
+
+    /* 価格 */
+    .price {
+        font-size: 17px;
+    }
+
+    /* 各項目の余白 */
+    .item,
+    .event {
+        margin-bottom: 15px;
+    }
+}
+
+
+/* =========================
+   小さいスマホ対応
+========================= */
+
+@media screen and (max-width: 480px) {
+
+    .store-info,
+    .new-items,
+    .events {
+        width: 94%;
+        padding: 16px 12px;
+
+        border-width: 6px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    .store-info,
+    .new-items,
+    .events,
+    .item,
+    .event {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .date {
+        font-size: 12px;
+    }
+
+    .price {
+        font-size: 15px;
+    }
 }

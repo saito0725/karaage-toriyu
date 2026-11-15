@@ -1,6 +1,6 @@
 @charset 'UTF-8';
 
-@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yuji+Boku&family=Shippori+Mincho:wght@500;600;700&display=swap');
 
 /*全体の色 */
 :root {
@@ -665,39 +665,63 @@ DESKTOP SIZE
 
 /* ロゴ */
 .logo {
-    font-family: 'M PLUS Rounded 1c', sans-serif;
-    font-size: 32px;
-    font-weight: 800;
-    color: #ff0000;
+    font-family: 'Yuji Boku', serif;
+    font-size: 36px;
+    font-weight: 400;
+    color: #9e211b;
+    text-shadow: 1px 2px 2px rgba(80, 30, 10, 0.15);
 }
 
 /* メニュー */
 
-.top-menu{
-    display:flex;
-    list-style:none;
-    margin:0;
-    padding:0;
+/* メニュー */
+.top-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
 }
 
-.top-menu li{
-    padding:0 25px;
-    border-left:1px solid #e60012;
+.top-menu li {
+    padding: 0 25px;
+    border-left: 1px solid #b89a5a;
 }
 
-.top-menu li:last-child{
-    border-right:1px solid #e60012;
+.top-menu li:last-child {
+    border-right: 1px solid #b89a5a;
 }
 
-.top-menu a{
-    text-decoration:none;
-    color:#e60012;
-    font-weight:bold;
-    font-size:16px;
+.top-menu a {
+    text-decoration: none;
+    color: #593719;
+    font-family: 'Shippori Mincho', serif;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 2px;
+    transition: .3s;
+    position: relative;
+    padding-bottom: 5px;
 }
 
-.top-menu a:hover{
-    opacity:.7;
+/* ホバー時の金色ライン */
+.top-menu a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: #b58a3c;
+    transition: .3s;
+}
+
+.top-menu a:hover {
+    color: #b58a3c;
+}
+
+.top-menu a:hover::after {
+    width: 100%;
 }
 
 /* スライダー */

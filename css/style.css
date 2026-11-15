@@ -177,6 +177,52 @@ LAYOUT
     align-self: center;
 }
 
+.guide-card{
+
+    width:1200px;
+    max-width:90%;
+
+    margin:50px auto;
+
+    background:#fff8e6;
+
+    border:10px solid #6b3f1d;
+    border-radius:25px;
+
+    box-shadow:
+        0 0 0 6px #b8860b,
+        0 0 0 12px #6b3f1d,
+        0 20px 40px rgba(0,0,0,.4);
+
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+
+    padding:35px;
+}
+
+.guide-link{
+
+    font-family:'Shippori Mincho', serif;
+
+    font-size:2.2rem;
+
+    font-weight:bold;
+
+    color:#d6671d;
+
+    text-decoration:none;
+
+    transition:.3s;
+}
+
+.guide-link:hover{
+    transform:scale(1.05);
+}
+.guide-text{
+    margin-top:35px;
+}
+
 /*
 GALLERY
 ================================================ */

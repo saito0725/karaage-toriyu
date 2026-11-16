@@ -770,42 +770,124 @@ DESKTOP SIZE
     width: 100%;
 }
 
-/* スライダー */
 
-.slider{
-    border:15px solid #3d220f;
+/* =========================
+   写真スライダー
+========================= */
 
+.slider {
+    position: relative;
+    width: 100%;
+    height: 650px;
+    overflow: hidden;
+
+    border: 15px solid #3d220f;
     box-shadow:
         0 0 0 5px #b8860b,
         0 0 0 10px #6b3f1d,
         0 15px 40px rgba(0,0,0,.5);
-
-    overflow:hidden;
 }
 
-.slide-track{
-    display:flex;
-    width:max-content;
-    animation:slide 40s linear infinite;
+.slides {
+    display: flex;
+    width: 100%;
+    height: 100%;
 }
 
-.slide-track img{
-    height:650px;
-    width:auto;
-    object-fit:contain;
+.slides img {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: none;
+    background: #3d220f;
 }
 
-/* スライドアニメーション */
+.slides img.active {
+    display: block;
+}
+.slides img.active {
+    display: block;
+}
 
-@keyframes slide{
-    from{
-        transform:translateX(0);
+/* 左右の矢印 */
+.slide-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 55px;
+    height: 55px;
+    border: 2px solid #b8860b;
+    border-radius: 50%;
+    background: rgba(61,34,15,.8);
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+    z-index: 2;
+    transition: .3s;
+}
+
+.slide-btn:hover {
+    background: #b8860b;
+}
+
+.slide-btn.prev {
+    left: 20px;
+}
+
+.slide-btn.next {
+    right: 20px;
+}
+
+/* 下の丸いボタン */
+.slide-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    z-index: 2;
+}
+
+.slide-dots button {
+    width: 13px;
+    height: 13px;
+    border: 2px solid white;
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+}
+
+.slide-dots button.active {
+    background: #d6a84b;
+    border-color: #d6a84b;
+}
+
+/* スマホ */
+@media screen and (max-width: 768px) {
+    .slider {
+        height: 220px;
+        border-width: 6px;
     }
 
-    to{
-        transform:translateX(-50%);
+    .slide-btn {
+        width: 38px;
+        height: 38px;
+        font-size: 28px;
+    }
+
+    .slide-btn.prev {
+        left: 8px;
+    }
+
+    .slide-btn.next {
+        right: 8px;
     }
 }
+
+
+
 
 /* 横行っちゃうのをの消したやつ!! */
 html,

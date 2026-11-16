@@ -401,3 +401,75 @@ if (omikujiButton && omikujiResult) {
     });
 
 }
+
+
+/*
+写真スライダー
+================================================ */
+
+const slides = document.querySelectorAll('.slides img');
+const dots = document.querySelectorAll('.slide-dots button');
+const prevButton = document.querySelector('.slide-btn.prev');
+const nextButton = document.querySelector('.slide-btn.next');
+
+if (slides.length > 0) {
+
+    let currentSlide = 0;
+    let slideTimer;
+
+    function showSlide(index) {
+
+        currentSlide = (index + slides.length) % slides.length;
+
+        slides.forEach((slide, i) => {
+            slide.classList.toggle('active', i === currentSlide);
+        });
+
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === currentSlide);
+        });
+
+    }
+
+    function nextSlide() {
+        showSlide(currentSlide + 1);
+    }
+
+    function prevSlide() {
+        showSlide(currentSlide - 1);
+    }
+
+    function startAutoSlide() {
+        clearInterval(slideTimer);
+
+        slideTimer = setInterval(() => {
+            nextSlide();
+        }, 5000);
+    }
+
+    function resetAutoSlide() {
+        startAutoSlide();
+    }
+
+    nextButton.addEventListener('click', () => {
+        nextSlide();
+        resetAutoSlide();
+    });
+
+    prevButton.addEventListener('click', () => {
+        prevSlide();
+        resetAutoSlide();
+    });
+
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            showSlide(index);
+            resetAutoSlide();
+        });
+    });
+
+    showSlide(0);
+    startAutoSlide();
+
+}
+

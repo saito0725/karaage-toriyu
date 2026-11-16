@@ -1607,3 +1607,91 @@ video{
         font-size: 24px;
     }
 }
+
+/* =========================
+   フッターのデザイン（修正版）
+========================= */
+.site-footer {
+    background-color: #3d220f;          /* お店のテーマカラー（こげ茶） */
+    color: #ffffff;
+    padding: 40px 20px 20px;
+    margin-top: 100px;                  /* 上のコンテンツとの隙間を広げて重なりを防ぐ */
+    clear: both;                        /* 回り込みを解除して下にしっかり配置する */
+    border-top: 4px solid #b8860b;      /* 金色のライン */
+    box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 5;                         /* ほかの要素の下に埋もれないようにする */
+}
+
+.footer-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.footer-shop-name {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #d6a84b;                     /* 店名は金色 */
+    margin-bottom: 6px;
+    letter-spacing: 1px;
+}
+
+.footer-address {
+    font-size: 0.9rem;
+    color: #e0e0e0;
+}
+
+/* フッターのリンク集リスト */
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-links li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
+
+.footer-links li a:hover {
+    color: #d6a84b;
+    text-decoration: underline;
+}
+
+/* コピーライト部分 */
+.copyright {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #b0b0b0;
+    margin-top: 20px;
+}
+
+/* スマホ表示のときの調整 */
+@media screen and (max-width: 768px) {
+    .site-footer {
+        margin-top: 60px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .footer-links {
+        justify-content: center;
+        gap: 15px;
+    }
+}

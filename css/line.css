@@ -1,0 +1,410 @@
+
+@charset "UTF-8";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.line-guide-page {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 45px 20px 80px;
+}
+
+/* ==============================
+   タイトル・案内文
+============================== */
+
+.line-page-intro {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    padding: 30px 25px;
+    box-sizing: border-box;
+
+    /* 背景を透けさせない */
+    background: #fff8e6;
+    border: 5px solid #6b3f1d;
+    border-radius: 18px;
+    box-shadow:
+        0 0 0 4px #b8860b,
+        0 8px 20px rgba(0, 0, 0, 0.3);
+
+    text-align: center;
+}
+
+.line-intro-label {
+    margin: 0 0 12px;
+    color: #8b4513;
+    font-size: 1.1rem;
+    font-weight: bold;
+    letter-spacing: 0.15em;
+}
+
+.line-page-intro .line-page-heading {
+    display: inline-block;
+    margin: 0;
+    padding: 0 0 15px;
+    color: #4a2813;
+    font-family: "Shippori Mincho", serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    border-bottom: 3px solid #b8860b;
+}
+
+.line-intro-description {
+    margin: 15px 0 0;
+    color: #6b3f1d;
+    font-size: 1.15rem;
+    font-weight: bold;
+    line-height: 1.8;
+}
+
+/* ==============================
+   全体の外枠
+============================== */
+
+.line-guide-container {
+    width: 100%;
+    padding: 35px;
+    background: #fff8e6;
+    border: 9px solid #3d220f;
+    border-radius: 22px;
+    outline: 4px solid #b8860b;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+    box-sizing: border-box;
+}
+
+/* ==============================
+   STEPカード
+============================== */
+
+.line-step {
+    width: 100%;
+    margin: 0 auto 30px;
+    padding: 28px;
+    background: #fff;
+    border: 3px solid #d7b890;
+    border-radius: 16px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.10);
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.line-step:last-of-type {
+    margin-bottom: 0;
+}
+
+/* STEP見出し */
+
+.line-step-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-bottom: 18px;
+}
+
+.line-step-title span {
+    flex-shrink: 0;
+    padding: 10px 18px;
+    color: #fff8e6;
+    background: #6b3f1d;
+    border: 2px solid #b8860b;
+    border-radius: 8px;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+}
+
+.line-step-title h2 {
+    margin: 0;
+    color: #6b3f1d;
+    font-family: "Shippori Mincho", serif;
+    font-size: 1.45rem;
+}
+
+/* STEP説明文 */
+
+.line-step > p {
+    margin: 0 0 22px;
+    color: #60452e;
+    font-size: 1.05rem;
+    font-weight: bold;
+    line-height: 1.9;
+}
+
+/* STEP画像 */
+
+.line-step-image {
+    display: block;
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    margin: 0 auto;
+    padding: 6px;
+    background: #fff;
+    border: 3px solid #b8860b;
+    border-radius: 12px;
+    box-shadow: 0 7px 18px rgba(0, 0, 0, 0.15);
+    object-fit: contain;
+}
+
+/* ==============================
+   割引券エリア
+============================== */
+
+.line-coupon {
+    margin-top: 45px;
+    padding: 35px;
+    background: #fff;
+    border: 5px double #b8860b;
+    border-radius: 18px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.12);
+    text-align: center;
+}
+
+.line-coupon-label {
+    margin: 0;
+    color: #d6671d;
+    font-size: 0.9rem;
+    font-weight: bold;
+    letter-spacing: 0.2em;
+}
+
+.line-coupon h2 {
+    margin: 10px 0;
+    color: #6b3f1d;
+    font-family: "Shippori Mincho", serif;
+    font-size: 2.2rem;
+}
+
+.line-coupon > p:not(.line-coupon-label) {
+    color: #60452e;
+    font-weight: bold;
+    line-height: 1.9;
+}
+
+.line-coupon-image {
+    display: block;
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    margin: 25px auto 0;
+    padding: 6px;
+    background: #fff;
+    border: 3px solid #b8860b;
+    border-radius: 12px;
+    object-fit: contain;
+}
+
+/* ==============================
+   LINE注文ボタン
+   外枠の中に配置
+============================== */
+
+.line-order-area {
+    margin: 40px auto 5px;
+    text-align: center;
+}
+
+.line-order-button {
+    display: inline-block;
+    padding: 16px 45px;
+    color: #fff;
+    background: #06c755;
+    border: 3px solid #078b3e;
+    border-radius: 999px;
+    font-size: 1.15rem;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+}
+
+.line-order-button:hover {
+    background: #05ad4b;
+    transform: translateY(-3px);
+}
+
+
+/* LINE注文ボタン */
+.line-order-area {
+    margin: 45px auto 10px;
+    text-align: center;
+}
+
+.line-order-area p {
+    margin-bottom: 18px;
+    color: #6b3f1d;
+    font-size: 1.15rem;
+    font-weight: bold;
+}
+
+.line-order-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 18px 45px;
+
+    color: #fff;
+    background: #06c755;
+    border: 3px solid #078b3e;
+    border-radius: 50px;
+
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+}
+
+.line-order-button:hover {
+    background: #05ad4b;
+    transform: translateY(-4px);
+    box-shadow: 0 9px 18px rgba(0, 0, 0, 0.25);
+}
+
+.line-button-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    color: #06c755;
+    background: #fff;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+    .line-order-button {
+        width: 90%;
+        padding: 15px 12px;
+        font-size: 1rem;
+        box-sizing: border-box;
+    }
+}
+/* ==============================
+   ヘッダーのトップページリンク
+   他ページと同じ文字＋縦線のデザイン
+============================== */
+
+.top-bar .line-home-link {
+    display: inline-block;
+    flex-shrink: 0;
+    margin-left: auto;
+    margin-right: 18%;
+    padding: 5px 35px;
+
+    color: #3d220f;
+    background: transparent;
+    border: none;
+    border-left: 1px solid #b8860b;
+    border-right: 1px solid #b8860b;
+    border-radius: 0;
+
+    font-family: "Shippori Mincho", serif;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: 0.3s;
+}
+
+.top-bar .line-home-link:hover {
+    color: #d6671d;
+    background: transparent;
+}
+
+/* ==============================
+   スマホ表示
+============================== */
+
+@media screen and (max-width: 768px) {
+
+    .line-guide-page {
+        padding: 30px 12px 55px;
+    }
+
+    .line-page-intro {
+        width: 95%;
+        margin-bottom: 30px;
+        padding: 22px 15px;
+    }
+
+    .line-intro-label {
+        font-size: 0.9rem;
+    }
+
+    .line-page-intro .line-page-heading {
+        font-size: 2rem;
+    }
+
+    .line-intro-description {
+        font-size: 0.95rem;
+    }
+
+    .line-guide-container {
+        padding: 12px;
+        border-width: 5px;
+        border-radius: 15px;
+    }
+
+    .line-step {
+        padding: 20px 12px;
+        margin-bottom: 20px;
+    }
+
+    .line-step-title {
+        gap: 10px;
+    }
+
+    .line-step-title span {
+        padding: 8px 11px;
+        font-size: 0.85rem;
+    }
+
+    .line-step-title h2 {
+        font-size: 1.1rem;
+        text-align: left;
+    }
+
+    .line-step > p {
+        font-size: 0.92rem;
+    }
+
+    .line-step-image,
+    .line-coupon-image {
+        max-width: 100%;
+    }
+
+    .line-coupon {
+        padding: 20px 12px;
+        margin-top: 25px;
+    }
+
+    .line-coupon h2 {
+        font-size: 1.7rem;
+    }
+
+    .line-order-button {
+        width: 90%;
+        max-width: 300px;
+        padding: 14px 15px;
+        font-size: 1rem;
+        box-sizing: border-box;
+    }
+
+    .top-bar .line-home-link {
+        margin-right: 10px;
+        padding: 5px 10px;
+        font-size: 0.75rem;
+    }
+}

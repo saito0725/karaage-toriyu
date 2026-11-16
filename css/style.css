@@ -775,45 +775,59 @@ DESKTOP SIZE
    写真スライダー
 ========================= */
 
+/* =========================
+   写真スライダー（お店風レイアウト）
+========================= */
+
 .slider {
     position: relative;
-    width: 100%;
-    height: 650px;
+    width: 92%;          /* 画面の端に少し余白を持たせる */
+    max-width: 1000px;   /* パソコンなどの大画面でも横幅1000pxまでに抑える（お好みで 900px〜1100px に調整可） */
+    margin: 25px auto;   /* 上下に少し余白をつけ、左右中央に配置 */
     overflow: hidden;
+    background-color: #1a1a1a;
 
-    border: 15px solid #3d220f;
+    border: 12px solid #3d220f;
     box-shadow:
-        0 0 0 5px #b8860b,
-        0 0 0 10px #6b3f1d,
-        0 15px 40px rgba(0,0,0,.5);
+        0 0 0 4px #b8860b,
+        0 0 0 8px #6b3f1d,
+        0 15px 40px rgba(0,0,0,.4);
 }
 
+/* スライドの枠。画像をそのままの比率で表示するため height は指定しない */
 .slides {
-    display: flex;
+    position: relative;
     width: 100%;
-    height: 100%;
 }
 
+/* 1枚目の画像でスライダー全体の高さを自動決定させる */
 .slides img {
-    flex: 0 0 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: none;
-    background: #3d220f;
+    height: auto;
+    display: block;
+    opacity: 0;
+    transition: opacity 1s ease-in-out; /* 1秒かけてふわっと切り替わる */
+    pointer-events: none;
 }
 
-.slides img.active {
-    display: block;
-}
-.slides img.active {
-    display: block;
+/* 基準となる1枚目の画像 */
+.slides img:first-child {
+    position: relative;
 }
 
-/* 左右の矢印 */
+/* 表示中の画像 */
+.slides img.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* 左右の矢印ボタン（画像の上下中央に配置） */
 .slide-btn {
     position: absolute;
-    top: 50%;
+    top: 45%;
     transform: translateY(-50%);
     width: 55px;
     height: 55px;
@@ -823,8 +837,12 @@ DESKTOP SIZE
     color: white;
     font-size: 40px;
     cursor: pointer;
-    z-index: 2;
+    z-index: 10;
     transition: .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 4px;
 }
 
 .slide-btn:hover {
@@ -839,15 +857,15 @@ DESKTOP SIZE
     right: 20px;
 }
 
-/* 下の丸いボタン */
+/* 下の丸いボタン（インジケーター） */
 .slide-dots {
     position: absolute;
-    bottom: 20px;
+    bottom: 15px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     gap: 12px;
-    z-index: 2;
+    z-index: 10;
 }
 
 .slide-dots button {
@@ -857,6 +875,7 @@ DESKTOP SIZE
     border-radius: 50%;
     background: transparent;
     cursor: pointer;
+    transition: .3s;
 }
 
 .slide-dots button.active {
@@ -864,11 +883,10 @@ DESKTOP SIZE
     border-color: #d6a84b;
 }
 
-/* スマホ */
+/* スマホ表示時の調整 */
 @media screen and (max-width: 768px) {
     .slider {
-        height: 220px;
-        border-width: 6px;
+        border-width: 6px; /* スマホでは枠線を少し細くしてすっきりさせる */
     }
 
     .slide-btn {

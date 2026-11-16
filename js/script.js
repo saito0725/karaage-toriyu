@@ -402,74 +402,78 @@ if (omikujiButton && omikujiResult) {
 
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+    const slides = document.querySelectorAll('.slides img');
+    const prevBtn = document.querySelector('.slide-btn.prev');
+    const nextBtn = document.querySelector('.slide-btn.next');
+    const dotsContainer = document.querySelector('.slide-dots');
 
-/*
-写真スライダー
-================================================ */
+    if (slides.length === 0) return;
 
-const slides = document.querySelectorAll('.slides img');
-const dots = document.querySelectorAll('.slide-dots button');
-const prevButton = document.querySelector('.slide-btn.prev');
-const nextButton = document.querySelector('.slide-btn.next');
+    let currentIndex = 0;
+    let slideInterval;
+    const intervalTime = 5000; // 5秒ごとに切り替え
 
-if (slides.length > 0) {
+    // 画像の枚数分だけ下の丸ボタン（<button>）を自動生成
+    slides.forEach((_, index) => {
+        const dot = document.createElement('button');
+        dot.setAttribute('aria-label', `${index + 1}枚目のスライドへ`);
+        if (index === 0) dot.classList.add('active');
 
-    let currentSlide = 0;
-    let slideTimer;
-
-    function showSlide(index) {
-
-        currentSlide = (index + slides.length) % slides.length;
-
-        slides.forEach((slide, i) => {
-            slide.classList.toggle('active', i === currentSlide);
+        dot.addEventListener('click', () => {
+            goToSlide(index);
+            resetTimer();
         });
 
-        dots.forEach((dot, i) => {
-            dot.classList.toggle('active', i === currentSlide);
-        });
+        dotsContainer.appendChild(dot);
+    });
 
+    const dots = dotsContainer.querySelectorAll('button');
+
+    // スライドを切り替える処理
+    function goToSlide(index) {
+        slides[currentIndex].classList.remove('active');
+        dots[currentIndex].classList.remove('active');
+
+        currentIndex = (index + slides.length) % slides.length;
+
+        slides[currentIndex].classList.add('active');
+        dots[currentIndex].classList.add('active');
     }
 
     function nextSlide() {
-        showSlide(currentSlide + 1);
+        goToSlide(currentIndex + 1);
     }
 
     function prevSlide() {
-        showSlide(currentSlide - 1);
+        goToSlide(currentIndex - 1);
     }
 
-    function startAutoSlide() {
-        clearInterval(slideTimer);
+    // 5秒タイマーの開始・リセット
+    function startTimer() {
+        slideInterval = setInterval(nextSlide, intervalTime);
+    }
 
-        slideTimer = setInterval(() => {
+    function resetTimer() {
+        clearInterval(slideInterval);
+        startTimer();
+    }
+
+    // 矢印ボタンのクリックイベント
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
             nextSlide();
-        }, 5000);
-    }
-
-    function resetAutoSlide() {
-        startAutoSlide();
-    }
-
-    nextButton.addEventListener('click', () => {
-        nextSlide();
-        resetAutoSlide();
-    });
-
-    prevButton.addEventListener('click', () => {
-        prevSlide();
-        resetAutoSlide();
-    });
-
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            showSlide(index);
-            resetAutoSlide();
+            resetTimer();
         });
-    });
+    }
 
-    showSlide(0);
-    startAutoSlide();
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
+            resetTimer();
+        });
+    }
 
-}
-
+    // 自動再生スタート
+    startTimer();
+});

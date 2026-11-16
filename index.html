@@ -35,12 +35,23 @@
 
 </header>
 
-  <!--スライド-->
+ <!--スライド-->
 <section class="slider">
     <div class="slides">
-        <img src="images/kinoko.jpg" class="active" alt="キノコのバター醤油からあげ">
-        <img src="images/ibento.jpg" alt="イベント情報">
-        <img src="images/zouryou.jpg" alt="増量キャンペーン">
+        <!-- 1枚目：キノコ（saisin.htmlの #kinoko へ） -->
+        <a href="saisin.html#kinoko" class="slide-link active">
+            <img src="images/kinoko.jpg" alt="キノコのバター醤油からあげ">
+        </a>
+
+        <!-- 2枚目：イベント / レイニーデー（saisin.htmlの #rainy へ） -->
+        <a href="saisin.html#rainy" class="slide-link">
+            <img src="images/ibento.jpg" alt="イベント情報">
+        </a>
+
+        <!-- 3枚目：増量キャンペーン（saisin.htmlの #zouryou へ） -->
+        <a href="saisin.html#zouryou" class="slide-link">
+            <img src="images/zouryou.jpg" alt="増量キャンペーン">
+        </a>
     </div>
 
     <!-- 左右の矢印 -->
@@ -49,10 +60,6 @@
 
     <!-- 下の丸いボタン（JSで自動生成します） -->
     <div class="slide-dots"></div>
-</section>
-
-    
-
 </section>
    
      <!-- ローディング画面 -->

@@ -775,10 +775,6 @@ DESKTOP SIZE
    写真スライダー
 ========================= */
 
-/* =========================
-   写真スライダー（お店風レイアウト）
-========================= */
-
 .slider {
     position: relative;
     width: 92%;          /* 画面の端に少し余白を持たせる */
@@ -794,34 +790,41 @@ DESKTOP SIZE
         0 15px 40px rgba(0,0,0,.4);
 }
 
-/* スライドの枠。画像をそのままの比率で表示するため height は指定しない */
+/* スライドの枠 */
 .slides {
     position: relative;
     width: 100%;
 }
 
-/* 1枚目の画像でスライダー全体の高さを自動決定させる */
-.slides img {
+/* リンク付きスライドを重ねてフェードさせる設定 */
+.slide-link {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: auto;
     display: block;
     opacity: 0;
     transition: opacity 1s ease-in-out; /* 1秒かけてふわっと切り替わる */
-    pointer-events: none;
+    pointer-events: none; /* 見えていないスライドはクリックできないようにする */
 }
 
-/* 基準となる1枚目の画像 */
-.slides img:first-child {
+/* 1枚目のスライドを基準にして高さを自動決定させる */
+.slide-link:first-child {
     position: relative;
 }
 
-/* 表示中の画像 */
-.slides img.active {
+/* 表示中のスライド */
+.slide-link.active {
     opacity: 1;
-    pointer-events: auto;
+    pointer-events: auto; /* 今見えている画像だけクリック可能にする */
+    z-index: 1;
+}
+
+/* 中の画像は枠いっぱいに表示 */
+.slide-link img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 /* 左右の矢印ボタン（画像の上下中央に配置） */

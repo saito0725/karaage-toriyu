@@ -51,6 +51,7 @@ window.addEventListener('load', () => {
 });
 
 
+
 /*
 画像ギャラリー
 ================================================ */
@@ -403,7 +404,8 @@ if (omikujiButton && omikujiResult) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    const slides = document.querySelectorAll('.slides img');
+    // ▼ ここを '.slides img' から '.slides .slide-link' に変更します
+    const slides = document.querySelectorAll('.slides .slide-link');
     const prevBtn = document.querySelector('.slide-btn.prev');
     const nextBtn = document.querySelector('.slide-btn.next');
     const dotsContainer = document.querySelector('.slide-dots');
@@ -433,12 +435,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // スライドを切り替える処理
     function goToSlide(index) {
         slides[currentIndex].classList.remove('active');
-        dots[currentIndex].classList.remove('active');
+        if (dots[currentIndex]) dots[currentIndex].classList.remove('active');
 
         currentIndex = (index + slides.length) % slides.length;
 
         slides[currentIndex].classList.add('active');
-        dots[currentIndex].classList.add('active');
+        if (dots[currentIndex]) dots[currentIndex].classList.add('active');
     }
 
     function nextSlide() {

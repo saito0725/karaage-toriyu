@@ -904,6 +904,13 @@ DESKTOP SIZE
     }
 }
 
+/* スマホ画面のときだけ、下の丸（ドット）を非表示にする */
+@media screen and (max-width: 768px) {
+    .slide-dots {
+        display: none;
+    }
+}
+
 
 
 

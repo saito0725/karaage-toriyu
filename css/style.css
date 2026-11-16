@@ -905,9 +905,42 @@ DESKTOP SIZE
 }
 
 /* スマホ画面のときだけ、下の丸（ドット）を非表示にする */
+/* スマホ表示時の調整 */
 @media screen and (max-width: 768px) {
+    .slider {
+        width: 95%;
+        margin: 10px auto;
+        border-width: 6px;
+    }
+
+    /* 下の丸（ドット）は非表示 */
     .slide-dots {
         display: none;
+    }
+
+    /* スマホ用のスリムで邪魔にならない矢印ボタン */
+    .slide-btn {
+        width: 26px;           /* 横幅をスリムにして絵を隠さない */
+        height: 44px;          /* 縦は指で押しやすい高さをキープ */
+        font-size: 22px;
+        border-radius: 6px;    /* 丸ではなく角丸のタブ型にする */
+        background: rgba(61, 34, 15, 0.85); /* お店のテーマカラー（こげ茶）でくっきり表示 */
+        border: 1px solid #d6a84b;          /* 金色の細い枠線で見やすくする */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+        padding-bottom: 2px;
+    }
+
+    /* 枠の左右の端にピタッと寄せる */
+    .slide-btn.prev {
+        left: 0;
+        border-left: none;
+        border-radius: 0 6px 6px 0; /* 右側だけ角丸 */
+    }
+
+    .slide-btn.next {
+        right: 0;
+        border-right: none;
+        border-radius: 6px 0 0 6px; /* 左側だけ角丸 */
     }
 }
 

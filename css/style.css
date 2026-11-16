@@ -943,7 +943,41 @@ DESKTOP SIZE
         border-radius: 6px 0 0 6px; /* 左側だけ角丸 */
     }
 }
+/* スマホ表示時の調整 */
+@media screen and (max-width: 768px) {
+    .slider {
+        width: 95%;
+        margin: 10px auto;
+        border-width: 6px;
+    }
 
+    /* 下の丸（ドット）は非表示 */
+    .slide-dots {
+        display: none;
+    }
+
+    /* 邪魔にならない、極めてシンプルで控えめな矢印ボタン */
+    .slide-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 20px;
+        background: rgba(0, 0, 0, 0.3);     /* うっすら透ける薄い黒で、バナーの邪魔をしない */
+        border: none;                      /* 枠線をなくしてすっきりさせる */
+        border-radius: 50%;
+        box-shadow: none;
+        color: rgba(255, 255, 255, 0.9);   /* 文字は白で見やすく */
+        padding-bottom: 2px;
+    }
+
+    /* 左右の端ギリギリに寄せて、中の文字やイラストに被らないようにする */
+    .slide-btn.prev {
+        left: 4px;
+    }
+
+    .slide-btn.next {
+        right: 4px;
+    }
+}
 
 
 

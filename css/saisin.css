@@ -1,40 +1,87 @@
-/*最新情報*/
+/* =========================
+   最新情報ページ
+========================= */
 
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-/*最新情報の枠*/
-.store-info, .new-items, .events {
-    background: #ffffff;
-    margin: 40px auto;
-    padding: 35px;
-    width: 100%;
-    max-width: 1000px;
-   
+/* =========================
+   外枠
+========================= */
+
+.store-info,
+.new-items,
+.events{
+
+    background:#fff8e6;
+
+    width:90%;
+    max-width:1200px;
+
+    margin:60px auto;
+
+    padding:50px;
+
     border:15px solid #3d220f;
-    border-radius: 15px;
+
+    border-radius:25px;
+
     box-shadow:
         0 0 0 6px #b8860b,
-        0 0 0 13px #6b3f1d,
-        0 15px 30px rgba(0,0,0,.5);
- 
+        0 0 0 12px #6b3f1d,
+        0 15px 30px rgba(0,0,0,.4);
 }
- 
- 
 
- 
-.item, .event {
-    margin-bottom: 20px;
+/* =========================
+   見出し
+========================= */
+
+h2{
+
+    text-align:center;
+
+    font-family:'Shippori Mincho', serif;
+
+    font-size:3rem;
+
+    color:#d6671d;
+
+    margin-bottom:40px;
+
+    text-shadow:
+        2px 2px 5px rgba(0,0,0,.15);
 }
- 
+
+/* =========================
+   記事カード
+========================= */
+
+.item,
+.event{
+
+    background:#fff;
+
+    padding:30px;
+
+    margin-bottom:30px;
+
+    border-radius:20px;
+
+    border:3px solid #d7b890;
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,.1);
+}
+
 /* =========================
    開催期間
 ========================= */
 
 .date{
+
     font-family:'M PLUS Rounded 1c', sans-serif;
 
     font-size:20px;
@@ -43,36 +90,8 @@
 
     color:#c40000;
 
-    margin:15px 0;
-
-    text-shadow:none;
+    margin-bottom:15px;
 }
-
- 
-
-
-
-/* =========================
-   本文
-========================= */
-
-.item p,
-.event p{
-    font-family: 'M PLUS Rounded 1c', sans-serif;
-
-    font-size: 22px;
-
-    line-height: 2;
-
-    color: #333;
-
-    font-weight: 700;
-
-    text-shadow: none;
-
-    margin: 10px 0;
-}
-
 
 /* =========================
    商品名・イベント名
@@ -80,15 +99,32 @@
 
 .item h3,
 .event h3{
-    font-family: 'Shippori Mincho', serif;
 
-    font-size: 40px;
+    font-family:'Shippori Mincho', serif;
 
-    color: #8b4513;
+    font-size:2.5rem;
 
-    margin: 20px 0;
+    color:#8b4513;
 
-    text-shadow: none;
+    margin-bottom:20px;
+}
+
+/* =========================
+   本文
+========================= */
+
+.item p,
+.event p{
+
+    font-family:'M PLUS Rounded 1c', sans-serif;
+
+    font-size:1.3rem;
+
+    line-height:2;
+
+    color:#333;
+
+    font-weight:700;
 }
 
 /* =========================
@@ -96,128 +132,156 @@
 ========================= */
 
 .price{
+
+    display:block;
+
+    margin-top:20px;
+
     font-family:'Shippori Mincho', serif;
 
-    font-size:30px;
+    font-size:2rem;
 
     font-weight:bold;
 
     color:#d6671d;
-
-    text-shadow:none;
-}
-
-
- 
-.price {
-    font-family: 'Kosugi Maru', sans-serif;
-    font-size: 22px;
-    font-weight: 700;
-    color: #6b3f1d;
-}
-h2 {
-    font-weight: 400;
-    letter-spacing: 1px;
-    color: #ef1f18;
- 
-    text-shadow:
-        1px 0 #6b3f1d,
-        -1px 0 #6b3f1d,
-        0 1px #6b3f1d,
-        0 -1px #6b3f1d;
 }
 
 /* =========================
-   スマホ対応（レスポンシブ）
+   画像
 ========================= */
- 
-@media screen and (max-width: 768px) {
- 
-    /* 最新情報の枠 */
+
+.item img,
+.event img{
+
+    width:100%;
+
+    max-width:650px;
+
+    display:block;
+
+    margin:25px auto;
+
+    border-radius:20px;
+
+    border:6px solid #b8860b;
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.25);
+}
+
+/* =========================
+   スマホ対応
+========================= */
+
+@media screen and (max-width:768px){
+
     .store-info,
     .new-items,
-    .events {
-        width: 92%;
-        max-width: 100%;
-        margin: 25px auto;
-        padding: 20px 15px;
- 
-        border: 8px solid #3d220f;
-        border-radius: 12px;
- 
+    .events{
+
+        width:95%;
+
+        margin:20px auto;
+
+        padding:20px;
+
+        border:8px solid #3d220f;
+
+        border-radius:15px;
+
         box-shadow:
             0 0 0 4px #b8860b,
             0 0 0 8px #6b3f1d,
             0 10px 20px rgba(0,0,0,.4);
     }
- 
-    /* 見出し */
-    h2 {
-        font-size: 26px;
-        letter-spacing: 1px;
+
+    h2{
+
+        font-size:1.8rem;
+
+        margin-bottom:25px;
     }
- 
-    /* 文章 */
-    .store-info,
-    .new-items,
-    .events,
+
     .item,
-    .event {
-        font-size: 16px;
-        line-height: 1.7;
+    .event{
+
+        padding:20px;
+
+        margin-bottom:20px;
     }
- 
-    /* 日付 */
-    .date {
-        font-size: 13px;
+
+    .item h3,
+    .event h3{
+
+        font-size:1.4rem;
+
+        line-height:1.5;
+
+        margin-bottom:10px;
     }
- 
-    /* 価格 */
-    .price {
-        font-size: 17px;
+
+    .item p,
+    .event p{
+
+        font-size:0.95rem;
+
+        line-height:1.8;
     }
- 
-    /* 各項目の余白 */
-    .item,
-    .event {
-        margin-bottom: 15px;
+
+    .date{
+
+        font-size:0.8rem;
+    }
+
+    .price{
+
+        font-size:1.1rem;
+    }
+
+    .item img,
+    .event img{
+
+        max-width:100%;
     }
 }
- 
- 
+
 /* =========================
-   小さいスマホ対応
+   極小スマホ
 ========================= */
- 
-@media screen and (max-width: 480px) {
- 
+
+@media screen and (max-width:480px){
+
     .store-info,
     .new-items,
-    .events {
-        width: 94%;
-        padding: 16px 12px;
- 
-        border-width: 6px;
+    .events{
+
+        width:94%;
+
+        padding:15px;
+
+        border-width:6px;
     }
- 
-    h2 {
-        font-size: 22px;
+
+    h2{
+        font-size:1.5rem;
     }
- 
-    .store-info,
-    .new-items,
-    .events,
-    .item,
-    .event {
-        font-size: 14px;
-        line-height: 1.8;
+
+    .item h3,
+    .event h3{
+        font-size:1.2rem;
     }
- 
-    .date {
-        font-size: 12px;
+
+    .item p,
+    .event p{
+        font-size:0.85rem;
+        line-height:1.7;
     }
- 
-    .price {
-        font-size: 15px;
+
+    .date{
+        font-size:0.75rem;
+    }
+
+    .price{
+        font-size:1rem;
     }
 }

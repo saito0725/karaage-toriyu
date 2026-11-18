@@ -1,10 +1,293 @@
-/* =========================
-   採用ページ
-========================= */
+
+@charset "UTF-8";
 
 *{
-    margin: 0;
-    padding: 0;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* ページ全体 */
+
+.menu-list {
+    width: 100%;
+    padding: 45px 20px 80px;
     box-sizing: border-box;
 }
 
+/* メインカード */
+
+.menu-card {
+    width: 90%;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 30px;
+    box-sizing: border-box;
+
+    background: #fff8e6;
+    border: 8px solid #3d220f;
+    outline: 4px solid #b8860b;
+    border-radius: 24px;
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+    text-align: center;
+}
+
+/* 求人画像 */
+
+.point-img {
+    display: block;
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+    margin: 0 auto;
+
+    padding: 10px;
+    box-sizing: border-box;
+
+    background: #fff;
+    border: 3px solid #d7b890;
+    border-radius: 14px;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.15);
+    object-fit: contain;
+}
+
+/* お問い合わせ電話ボタン */
+
+.fixed-tel {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 9999;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+
+    padding: 18px 20px;
+
+    color: #fff8e6;
+    background: #6b3f1d;
+    border: 3px solid #b8860b;
+    border-right: none;
+    border-radius: 12px 0 0 12px;
+
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1.6;
+    text-align: center;
+    text-decoration: none;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+    transition: 0.3s;
+}
+
+.fixed-tel:hover {
+    background: #d6671d;
+    padding-right: 27px;
+}
+
+/* ==============================
+   スマートフォン対応
+============================== */
+
+@media screen and (max-width: 768px) {
+
+    .menu-list {
+        padding: 30px 12px 60px;
+    }
+
+    .menu-card {
+        width: 95%;
+        padding: 15px;
+        border-width: 5px;
+        border-radius: 17px;
+    }
+
+    .point-img {
+        max-width: 100%;
+        padding: 6px;
+    }
+
+    .fixed-tel {
+        top: auto;
+        bottom: 15px;
+        right: 10px;
+        transform: none;
+
+        padding: 10px 15px;
+        border: 2px solid #b8860b;
+        border-radius: 12px;
+
+        font-size: 0.8rem;
+        line-height: 1.5;
+    }
+
+    .fixed-tel:hover {
+        padding-right: 15px;
+    }
+}
+
+/* ==============================
+   ヘッダー表示修正
+============================== */
+
+/* PC・スマホ共通 */
+.top-bar {
+    width: 100%;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 12px 5%;
+    box-sizing: border-box;
+}
+
+/* ロゴ */
+.top-bar .logo {
+    flex-shrink: 1;
+    min-width: 0;
+}
+
+/* トップページに戻るメニュー */
+.top-bar .top-menu {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin: 0 0 0 auto;
+    padding: 0;
+    list-style: none;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.top-bar .top-menu li {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+.top-bar .top-menu li a {
+    display: inline-block;
+    padding: 8px 25px;
+    color: #3d220f !important;
+    background: transparent;
+    border-left: 1px solid #b8860b;
+    border-right: 1px solid #b8860b;
+    font-family: "Shippori Mincho", serif;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    white-space: nowrap;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.top-bar .top-menu li a:hover {
+    color: #d6671d !important;
+}
+
+/* ==============================
+   スマートフォン対応
+============================== */
+
+@media screen and (max-width: 768px) {
+
+    /* ヘッダーを2段にする */
+    .top-bar {
+        min-height: auto;
+        flex-direction: column;
+        justify-content: center;
+        gap: 12px;
+        padding: 12px 10px 15px;
+    }
+
+    /* ロゴ */
+    .top-bar .logo {
+        width: 100%;
+        text-align: center;
+        font-size: clamp(1.2rem, 5vw, 1.7rem);
+        line-height: 1.5;
+    }
+
+    /* 戻るメニュー */
+    .top-bar .top-menu {
+        display: flex !important;
+        width: 100%;
+        justify-content: center;
+        margin: 0 auto;
+    }
+
+    .top-bar .top-menu li a {
+        padding: 7px 22px;
+        font-size: 0.9rem;
+    }
+
+    /* ページ全体 */
+    .menu-list {
+        padding: 25px 10px 100px;
+    }
+
+    /* 白いカード */
+    .menu-card {
+        width: 96%;
+        max-width: 100%;
+        padding: 12px;
+        border-width: 5px;
+        border-radius: 16px;
+    }
+
+    /* 求人画像 */
+    .point-img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        padding: 5px;
+    }
+
+    /* 電話ボタン */
+    .fixed-tel {
+        position: fixed;
+        top: auto;
+        right: 10px;
+        bottom: 12px;
+        transform: none;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 3px;
+
+        width: auto;
+        max-width: calc(100% - 20px);
+        padding: 10px 16px;
+
+        font-size: 0.8rem;
+        line-height: 1.5;
+        border: 2px solid #b8860b;
+        border-radius: 12px;
+        box-sizing: border-box;
+    }
+}
+
+/* 小さいスマホ */
+@media screen and (max-width: 380px) {
+
+    .top-bar .logo {
+        font-size: 1.15rem;
+    }
+
+    .top-bar .top-menu li a {
+        font-size: 0.8rem;
+        padding: 7px 16px;
+    }
+
+    .fixed-tel {
+        font-size: 0.75rem;
+    }
+}

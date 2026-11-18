@@ -285,3 +285,65 @@ h2{
         font-size:1rem;
     }
 }
+
+/* =========================
+   トップページに戻る
+========================= */
+
+.top-bar .top-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    padding: 0;
+    list-style: none;
+}
+
+.top-bar .top-menu li a {
+    display: inline-block;
+    padding: 8px 25px;
+
+    color: #3d220f;
+    background: transparent;
+
+    border-left: 1px solid #b8860b;
+    border-right: 1px solid #b8860b;
+
+    font-family: "Shippori Mincho", serif;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    white-space: nowrap;
+
+    transition: 0.3s;
+}
+
+.top-bar .top-menu li a:hover {
+    color: #d6671d;
+}
+
+/* スマホ対応 */
+@media screen and (max-width: 768px) {
+
+    .top-bar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 10px;
+    }
+
+    .top-bar .logo {
+        text-align: center;
+        font-size: 1.4rem;
+    }
+
+    .top-bar .top-menu {
+        margin: 0 auto;
+    }
+
+    .top-bar .top-menu li a {
+        padding: 7px 20px;
+        font-size: 0.9rem;
+    }
+}
